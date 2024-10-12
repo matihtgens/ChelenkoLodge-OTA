@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './footer.css';
 
 function Footer() {
     const [email, setEmail] = useState('');
@@ -6,21 +7,21 @@ function Footer() {
     const suscripcionNews = (e) => {
         e.preventDefault();
         alert(`Te has suscrito con: ${email}`);
-        setEmail('');
+        setEmail(''); // Limpiar el campo de correo electrónico
     };
 
     return (
         <footer>
-            <div class="logo-hotel">
+            <div className="logo-hotel">
                 <img src="" alt="logo-hotel" />
             </div>
-            <div class="ubicacion-hotel">
+            <div className="ubicacion-hotel">
                 <p>Ubicación del hotel (ciudad, país)</p>
             </div>
             <div>
                 <p>Suscríbete al newsletter</p>
             </div>
-            <div class="form">
+            <div className="form">
                 <form onSubmit={suscripcionNews}>
                     <input
                         type="email"
@@ -34,8 +35,6 @@ function Footer() {
                     </button>
                 </form>
             </div>
-            <div>
-                </div>
         </footer>
     );
 }

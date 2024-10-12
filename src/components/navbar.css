@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;              
+    justify-content: space-between;  /* Cambiado a space-between para separación entre elementos */
+    align-items: center;        
+    width: 100%;
+    height: 75px;
+    background-color: lightgray;
+    padding: 0 20px;  /* Espaciado en los lados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Sombra sutil para dar profundidad */
+}
+
+.navbar h1 {
+    font-size: 24px;  /* Tamaño de fuente del título */
+    margin: 0;  /* Eliminar margen predeterminado */
+}
+
+.navbar form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navbar form button {
+    background-color: #03e0a9;    
+    color: white;  /* Color del texto en el botón */
+    border: none;  /* Sin borde */
+    border-radius: 5px;  /* Bordes redondeados */
+    padding: 10px 15px;  /* Espaciado interno */
+    cursor: pointer;  /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s;  /* Transición suave para el hover */
+}
+
+.navbar form button:hover {
+    background-color: #029f87;  /* Color más oscuro al pasar el mouse */
+}
+
+.btn-cart {
+    background-color: #007bff;  /* Color del botón del carrito */
+    color: white;  /* Color del texto */
+    border: none;  /* Sin borde */
+    padding: 10px 15px;  /* Espaciado interno */
+    border-radius: 5px;  /* Bordes redondeados */
+    cursor: pointer;  /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s;  /* Transición suave para el hover */
+}
+
+.btn-cart:hover {
+    background-color: #0056b3;  /* Color más oscuro al pasar el mouse */
+}
