@@ -22,8 +22,8 @@ const App = () => {
     <CartProvider>
       <Router>
         <div>
-          <Navbar />
           <Header onCartClick={handleToggleCart} />
+          <Navbar />
           <MiniCart onClose={() => setIsCartOpen(false)} isOpen={isCartOpen} />
           <Routes>
             <Route path="/" element={<Home />} />

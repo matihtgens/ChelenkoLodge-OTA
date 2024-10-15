@@ -1,31 +1,20 @@
-.header{
-    display: flex;              
-    justify-content: center;    
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: whitesmoke;
+.links{
+    margin: 10px;
+    padding: 10px;
+    font-size: 25px;
 }
 
-img{
-    width: 45px;
-    height: 45px;
+.links:hover{
+    color: #14802b;
+    
 }
 
-.button-container{
-    display: flex;
-    gap: 10px;
+.icono:hover{
+    transform: scale(1.3);
+    transition: all 0.5s;
 }
 
-.header-button {
-    padding: 10px 15px;           
-    border: none;                 
-    border-radius: 5px;         
-    background-color: #03e0a9;   
-    color: white;                 
-    cursor: pointer;              
-}
-
-.header-button:hover {
-    background-color: #03aa80;
+.logito{
+    width: 30%;
+    height: auto;
 }
