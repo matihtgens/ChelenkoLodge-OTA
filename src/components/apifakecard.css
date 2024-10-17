@@ -63,3 +63,20 @@
     color: #666;
     text-shadow: none; /* Elimina cualquier sombra de texto */
 }
+
+/* Botón de precio */
+.price-button {
+    background-color: #20c997;  /* Color verde agua */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.price-button:hover {
+    background-color: #17a085;  /* Cambio de color en hover */
+}
