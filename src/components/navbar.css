@@ -1,47 +1,17 @@
-.container-navbar{
-    background-color: lightgray;
-    padding: 10px;
-    
+/* src/components/header.css */
+
+header {
+    background-color: #f8f9fa; /* Fondo claro */
 }
 
-.navbar{
-    width: 100%;
-    
+.navbar-nav .nav-link {
+    margin: 0 15px; /* Espaciado entre los enlaces */
 }
 
-.formulario{
-    background-color: whitesmoke;
-    border: 0px solid #000000;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+.btn {
+    margin-left: 10px; /* Espaciado para el botón del carrito */
 }
 
-form{
-    width: 100%;
-}
-
-.buscar{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-input:hover, select:hover{
-    border-color: green;
-}
-
-
-.btn-cart {
-    background-color: #007bff;  /* Color del botón del carrito */
-    color: white;  /* Color del texto */
-    border: none;  /* Sin borde */
-    padding: 10px 15px;  /* Espaciado interno */
-    border-radius: 5px;  /* Bordes redondeados */
-    cursor: pointer;  /* Cambia el cursor al pasar el mouse */
-    transition: background-color 0.3s;  /* Transición suave para el hover */
-}
-
-.btn-cart:hover {
-    background-color: #0056b3;  /* Color más oscuro al pasar el mouse */
+.navbar-brand img {
+    max-width: 100px; /* Ajustar tamaño del logo */
 }

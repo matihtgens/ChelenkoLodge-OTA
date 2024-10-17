@@ -1,13 +1,13 @@
-// src/components/home.jsx
 import React from 'react';
+import ApiFakeCard from './ApiFakeCard';
+import './Home.css';  // Asegúrate de importar el CSS
 
 const Home = () => {
-    return (
-        <div>
-            <h1>Bienvenido a Chelenko Lodge</h1>
-            {/* Más contenido aquí */}
-        </div>
-    );
+  return (
+    <div className="home-container">  {/* Aplica el fondo y el espaciado */}
+      <ApiFakeCard />  {/* Renderiza las cards */}
+    </div>
+  );
 };
 
-export default Home; // Asegúrate de tener esta línea
+export default Home;

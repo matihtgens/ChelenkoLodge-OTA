@@ -1,20 +1,38 @@
-.links{
-    margin: 10px;
-    padding: 10px;
-    font-size: 25px;
+/* src/components/header.css */
+
+header {
+    background-color: white; /* Fondo blanco */
 }
 
-.links:hover{
-    color: #14802b;
-    
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-.icono:hover{
-    transform: scale(1.3);
-    transition: all 0.5s;
+/* Logo como imagen de fondo */
+.navbar-brand {
+    background-image: url('../assets/img/logo-black.webp'); /* Asegúrate de que la ruta sea correcta */
+    background-size: contain; /* Ajusta la imagen al contenedor */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    width: 100px; /* Ancho del contenedor */
+    height: 40px; /* Ajusta la altura según sea necesario */
+    display: inline-block; /* Permite que se comporte como un bloque para la imagen de fondo */
 }
 
-.logito{
-    width: 30%;
-    height: auto;
+.nav-icon {
+    font-size: 24px; /* Tamaño del icono del perfil */
+    margin-right: 15px; /* Espaciado entre iconos */
+    color: #000; /* Color del icono */
+}
+
+.btn-cart {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    font-size: 24px; /* Tamaño del icono del carrito */
+    color: #000; /* Color del icono */
+}
+
+/* Hover effect for icons */
+.nav-icon:hover, .btn-cart:hover {
+    color: #007bff; /* Cambia el color al pasar el mouse */
 }

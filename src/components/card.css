@@ -1,66 +1,96 @@
-.card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 300px;
-  margin: 20px;
-  transition: transform 0.2s;
+.card-container {
+  width: 300px;  /* Ancho de cada tarjeta */
+  border-radius: 10px;  /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave para dar efecto de elevación */
+  background-color: white;  /* Fondo blanco para la tarjeta */
+  overflow: hidden;  /* Esconde cualquier contenido que sobrepase el tamaño de la tarjeta */
+  position: relative;  /* Para posicionar elementos dentro de la tarjeta */
+  transition: transform 0.3s ease;  /* Animación suave para cuando la tarjeta se eleva al hacer hover */
+  display: flex;  /* Usado para organizar el contenido verticalmente */
+  flex-direction: column;  /* Coloca los elementos en columna (imagen arriba, texto abajo) */
 }
 
-.card:hover {
-  transform: scale(1.05);
+.card-container:hover {
+  transform: translateY(-10px);  /* Mueve la tarjeta hacia arriba 10px cuando se pasa el mouse por encima */
 }
 
-.card-img-top {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.card-image {
+  width: 100%;  /* La imagen ocupa todo el ancho del contenedor */
+  height: 180px;  /* Altura fija de la imagen */
+  position: relative;  /* Para posicionar el botón de wishlist */
+  background: #f0f0f0;  /* Color de fondo temporal si no hay imagen disponible */
 }
 
-.card-body {
-  padding: 15px;
+.card-image img {
+  width: 100%;  /* La imagen ocupa todo el ancho disponible */
+  height: 100%;  /* La imagen ocupa todo el alto disponible */
+  object-fit: cover;  /* La imagen se recorta para encajar sin distorsionarse */
 }
 
-.card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+.wishlist-btn {
+  position: absolute;  /* Botón de wishlist posicionado absolutamente dentro del contenedor de la imagen */
+  top: 10px;  /* Espaciado desde la parte superior */
+  right: 10px;  /* Espaciado desde la parte derecha */
+  background: none;  /* Sin fondo para que solo se vea el ícono */
+  border: none;  /* Sin borde alrededor del botón */
+  cursor: pointer;  /* Cambia el cursor a pointer para indicar que es clicable */
+  font-size: 1.5rem;  /* Tamaño del ícono de corazón */
+  color: #006d68;  /* Color del ícono de corazón */
 }
 
-.card-subtitle {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 10px;
+.card-content {
+  padding: 15px;  /* Espaciado interno dentro del contenido de la tarjeta */
+  text-align: center;  /* Centra todo el texto dentro de la tarjeta */
 }
 
-.card-text {
-  font-size: 1rem;
-  color: #333;
+.card-content h3 {
+  font-size: 1.25rem;  /* Tamaño del título */
+  margin-bottom: 10px;  /* Espacio debajo del título */
+  color: #2c3e50;  /* Color del texto del título */
 }
 
-.btn-add-to-cart {
-  background-color: #32a852;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
+.services {
+  display: flex;  /* Flexbox para organizar los íconos de servicios en fila */
+  justify-content: center;  /* Centra los íconos de servicios horizontalmente */
+  margin-bottom: 10px;  /* Espacio debajo de la fila de servicios */
 }
 
-.btn-add-to-cart:hover {
-  background-color: #28a745;
+.service-icon {
+  font-size: 1.5rem;  /* Tamaño de los íconos de servicios */
+  margin: 0 8px;  /* Espacio entre cada ícono de servicio */
+  color: #7f8c8d;  /* Color de los íconos de servicio */
 }
 
-.btn-details {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
+.card-content h4 {
+  font-size: 1rem;  /* Tamaño del texto "Detalles" */
+  margin-bottom: 10px;  /* Espacio debajo del texto "Detalles" */
+  color: #34495e;  /* Color del texto "Detalles" */
+  font-weight: bold;  /* Negrita para el título de "Detalles" */
 }
 
-.btn-details:hover {
-  background-color: #0056b3;
+.card-content p {
+  font-size: 0.875rem;  /* Tamaño del texto de los detalles */
+  color: #7f8c8d;  /* Color del texto de los detalles */
+  margin-bottom: 15px;  /* Espacio debajo del texto de los detalles */
 }
+
+.card-footer {
+  display: flex;  /* Flexbox para organizar el botón de precio */
+  justify-content: center;  /* Centra el botón de precio horizontalmente */
+}
+
+.price-btn {
+  background-color: #00a99d;  /* Fondo verde del botón de precio */
+  border: none;  /* Sin borde */
+  border-radius: 5px;  /* Bordes redondeados del botón */
+  color: white;  /* Texto blanco dentro del botón */
+  padding: 10px 20px;  /* Relleno del botón */
+  font-size: 1rem;  /* Tamaño del texto del botón */
+  cursor: pointer;  /* Cambia el cursor a pointer cuando se pasa sobre el botón */
+  transition: background-color 0.3s ease;  /* Animación suave cuando el color de fondo cambia */
+}
+
+.price-btn:hover {
+  background-color: #008f8d;  /* Color de fondo más oscuro cuando se pasa el mouse por encima */
+}
+``
