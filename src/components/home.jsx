@@ -2,7 +2,7 @@ import React from 'react';
 import ApiFakeCard from './ApiFakeCard';
 import Card from './card';
 import Register from './register';
-import './Home.css';  // Asegúrate de importar el CSS
+import './home.css';  // Asegúrate de importar el CSS
 
 const Home = () => {
   return (
