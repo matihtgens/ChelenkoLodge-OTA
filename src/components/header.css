@@ -24,7 +24,7 @@ header {
 
 /* Logo como imagen de fondo */
 .navbar-brand {
-    background-image: url('../assets/img/logo-black.webp'); /* Asegúrate de que la ruta sea correcta */
+    background-image: url('../assets/img/logo-Black.webp'); /* Asegúrate de que la ruta sea correcta */
     background-size: contain; /* Ajusta la imagen al contenedor */
     background-repeat: no-repeat; /* Evita que se repita la imagen */
     width: 100px; /* Ancho del contenedor */
