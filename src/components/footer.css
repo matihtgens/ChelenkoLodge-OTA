@@ -1,9 +1,46 @@
-.footer {
-    background-color: black; 
-    color: white; 
-    text-align: center; 
-    padding: 10px; 
-    position: relative; 
-    bottom: 0; 
-    width: 100%; 
+.main-footer{
+    background-color: #afc6d4;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.col-md-3 {
+    flex: 0 0 20%;
+    max-width: 20%;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: none;
+}
+
+.logo-hotel{
+    width: 120px;
+}
+
+.footer-botton{
+    text-align: center;
+}
+
+h4{
+    margin: 20px 0;
+    padding: 20px 0;
+}
+.sin-estilos{
+    text-decoration: none;
+    color: inherit;
+}
+
+.newsletter{  
+    padding: 20px 0;
+}
+
+.flecha{
+    width: 20px;
 }

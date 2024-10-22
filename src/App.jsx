@@ -1,9 +1,11 @@
 import React, { useState } from 'react';  // Importa React y el hook useState para gestionar estados locales.
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Importa componentes para la navegación (enrutamiento) entre páginas.
-import Header from './components/Header';  // Importa el componente Header, asegúrate de que la ruta sea correcta.
-import Navbar from './components/Navbar';  // Importa el componente Navbar.
+import Header from './components/header';  // Importa el componente Header, asegúrate de que la ruta sea correcta.
+import Navbar from './components/navbar';  // Importa el componente Navbar.
 import MiniCart from './components/minicart';  // Importa el componente MiniCart.
 import Footer from './components/Footer';  // Importa el componente Footer.
+import MetodoPago from './components/MetodoPago';
+import Register from './components/register';
 import Home from './components/Home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
 import Reservation from './pages/reservation';  // Importa el componente Reservation.
 import Cart from './pages/cartpage';  // Importa el componente Cart.
@@ -28,11 +30,14 @@ const App = () => {
                     <Navbar />  {/* Muestra la barra de navegación */}
                     <MiniCart onClose={() => setIsCartOpen(false)} isOpen={isCartOpen} />  {/* Componente MiniCart que se abre o cierra según el estado 'isCartOpen', y permite cerrarlo con 'onClose' */}
                     <Routes>  {/* Contenedor que maneja las diferentes rutas de la aplicación */}
-                        <Route path="/" element={<Home />} />  {/* Ruta para la página de inicio que renderiza el componente Home */}
-                        <Route path="/reservation" element={<Reservation />} />  {/* Ruta para la página de reservas que renderiza el componente Reservation */}
-                        <Route path="/cart" element={<Cart />} />  {/* Ruta para la página del carrito que renderiza el componente Cart */}
-                        <Route path="/cabin" element={<ApiFakeCard/>} />  // Muestra ApiFakeCard en la página de inicio
+                        <Route path="/home" element={<Home />} />  {/* Ruta para la página de inicio que renderiza el componente Home */}
+                        <Route path="/register" element={<Register />} />  {/* Ruta para la página de reservas que renderiza el componente Reservation */}
+                        <Route path="/contact" element={<Cart />} />  {/* Ruta para la página del carrito que renderiza el componente Cart */}
+                        <Route path="/cabin" element={<ApiFakeCard/>} />
+                        <Route path="/payment" element={<MetodoPago/>} />
                     </Routes>
+                    <MetodoPago/>
+                    <Register />
                     <Footer />  {/* Muestra el pie de página */}
                 </div>
             </Router>

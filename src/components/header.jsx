@@ -4,27 +4,46 @@ import './header.css';  // Importa los estilos específicos para el componente H
 
 function Header({ onCartClick }) {  // Componente funcional Header que recibe la propiedad 'onCartClick'.
     return (
-        <header>  {/* Elemento de encabezado principal */}
-            <nav className="navbar navbar-light bg-light">  {/* Barra de navegación con estilos claros */}
-                <div className="container-fluid d-flex justify-content-between align-items-center">  {/* Contenedor de la barra de navegación con distribución entre los elementos */}
-                    
-                    <Link className="navbar-brand" to="/">  {/* Enlace que redirige a la página de inicio (logo o marca) */}
-                    </Link>
-                    
-                    <div className="d-flex align-items-center">  {/* Contenedor de iconos alineados en el centro verticalmente */}
-                        
-                        <Link to="/profile" className="nav-icon">  {/* Enlace que redirige al perfil del usuario */}
-                            <i className="bi bi-person-circle"></i>  {/* Icono de perfil utilizando Bootstrap Icons */}
-                        </Link>
-                        
-                        <button className="btn-cart" onClick={onCartClick}>  {/* Botón para abrir el carrito, que dispara la función 'onCartClick' */}
-                            <i className="bi bi-bag"></i>  {/* Icono de bolsa de compras (carrito) utilizando Bootstrap Icons */}
+        <>
+            <header>
+                <nav className="navbar navbar-expand-lg cont-principal">
+                    <div className="container-fluid">
+                        <div className='cont-logo col-6'>
+                            <Link className="navbar-brand" to="/home">
+                            </Link>
+                        </div>
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup"
+                            aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span className="navbar-toggler-icon"></span>
                         </button>
+                        <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                            <div className="navbar-nav cont-links">
+                                <Link className="nav-link efecto" to="/home">Home</Link>
+                                <Link className="nav-link efecto" to="/register">Registro</Link>
+                                <Link className="nav-link efecto" to="/home">Contacto</Link>
+                                <Link className="nav-link efecto" to="/home">Galeria</Link>
+                                <Link className="nav-icon efecto d-none d-lg-block" to="/profile">
+                                    <i className="bi bi-person-circle"></i>
+                                </Link>
+                                <Link className="nav-link efecto d-lg-none" to="/profile">Perfil</Link>
+                                <Link className="nav-icon efecto d-none d-lg-block" to="/cart" onClick={onCartClick}>
+                                    <i className="bi bi-bag"></i>
+                                </Link>
+                                <Link className="nav-link efecto d-lg-none" to="/cart" onClick={onCartClick}>Carrito</Link>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
+                </nav>
+            </header>
+        </>
     );
 }
 
-export default Header;  // Exporta el componente Header para ser utilizado en otras partes de la aplicación.
+export default Header;

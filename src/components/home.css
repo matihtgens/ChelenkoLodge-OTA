@@ -1,13 +1,21 @@
 /* src/components/home.css */
-.home-container {
+
+.fondo {
   background-image: url('/src/assets/img/chelenko.webp');
-  background-size: cover; /* Cubre toda la pantalla */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que se repita */
-  height: 95vh; /* Ocupa el 100% del alto de la ventana */
-  display: flex; /* Usa flexbox para centrar el contenido */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  color: white; /* Texto en blanco para contraste */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra al texto */
+  background-size: cover;
+  background-position: center;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  height: auto;
+  padding: 20px 0; /* Agrega espacio superior e inferior */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.home-container {
+  width: 90%; /* Ajusta según lo que necesites */
+  margin: 20px auto; /* Centra el contenedor */
+  padding: 10px; /* Espaciado interno */
+  overflow: hidden; /* Evita el desbordamiento */
+}
+

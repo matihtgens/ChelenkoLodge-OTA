@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.css'; // Importa el archivo CSS donde están los estilos de las tarjetas.
+import './card.css'; // Importa el archivo CSS donde están los estilos de las tarjetas.
 
 const Card = ({ name, price, services, details }) => { // Componente que recibe props: 'name', 'price', 'services', y 'details'.
     return (

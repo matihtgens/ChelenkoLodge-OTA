@@ -1,7 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  // Importamos el componente para los íconos
-import { faPaw, faSpa, faBanSmoking } from '@fortawesome/free-solid-svg-icons'; // Importamos los íconos
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  
+import { faPaw, faSpa, faBanSmoking } from '@fortawesome/free-solid-svg-icons'; 
 import suiteImage from "../assets/img/suitecard.jpg";
 import tinyImage from "../assets/img/tinycard.jpg";
 import './ApiFakeCard.css';
@@ -33,24 +32,30 @@ const ApiFakeCard = () => {
   ];
 
   return (
-    <div className="card-container">
-      {cardsData.map((card, index) => (
-        <div key={index} className="card">
-          <img src={card.img} alt={card.title} className="card-img" />
-          <h3>{card.title}</h3>
-          <p>{card.description}</p>
-          <p>Price: {card.price}</p>
-          <div className="conditions">
-            {card.conditions.map((condition, idx) => (
-              <div key={idx} className="condition-item">
-                <FontAwesomeIcon icon={condition.icon} className="condition-icon" />
-                <span>{condition.text}</span>
+    <div className="cont-card">
+      <div className="col-12 row justify-content-center"> {/* Centra las tarjetas */}
+        {cardsData.map((card, index) => (
+          <div key={index} className="col-lg-6 col-md-6 col-sm-12"> {/* Responsivo */}
+            <div className="card">
+              <img src={card.img} alt={card.title} className="card-img-top" />
+              <div className="card-body">
+                <h3 className="card-title">{card.title}</h3>
+                <p className="card-text">{card.description}</p>
+                <p>Price: {card.price}</p>
+                <div className="conditions">
+                  {card.conditions.map((condition, idx) => (
+                    <div key={idx} className="condition-item">
+                      <FontAwesomeIcon icon={condition.icon} className="condition-icon" />
+                      <span>{condition.text}</span>
+                    </div>
+                  ))}
+                </div>
+                <button className="btn btn-primary price-btn">Reservar por {card.price}</button>
               </div>
-            ))}
+            </div>
           </div>
-          <button className="price-btn">Reservar por {card.price}</button>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

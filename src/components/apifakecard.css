@@ -1,72 +1,37 @@
-/* Contenedor de las cards */
-.card-container {
+.cont-card {
     display: flex;
-    flex-wrap: wrap; /* Permitir que las cards se ajusten en varias líneas */
-    justify-content: space-around; /* Separación entre las cards */
-    gap: 20px; /* Espaciado entre las cards */
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrar el contenedor */
-}
-  
-/* Estilos para cada card individual */
-.card {
-    background-color: white;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    transition: transform 0.3s ease; /* Efecto hover */
-    text-align: center;
-    margin: 10px; /* Margen adicional para separación */
+    flex-wrap: wrap;
+    justify-content: space-between;   
 }
 
-/* Levanta la card al hacer hover */
+
+.card {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
 .card:hover {
-    transform: translateY(-10px); 
+    transform: translateY(-10px);
 }
 
 /* Estilo de la imagen dentro de la card */
-.card-img {
-    width: 100%;
-    height: 200px;
+.card-img-top {
+    width: 100% !important;
+    margin: 10px;
+    min-height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Estilos del título */
-.card h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-    text-shadow: none; /* Elimina cualquier sombra de texto */
-}
-
-/* Estilo de la descripción */
-.card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-    text-shadow: none; /* Elimina cualquier sombra de texto */
-}
-
-/* Precio */
-.card p:nth-of-type(2) {
-    font-weight: bold;
-    color: #333;
-    text-shadow: none; /* Elimina cualquier sombra de texto */
-}
-
-/* Servicios */
-.card p:nth-of-type(3) {
-    font-size: 0.9rem;
-    color: #666;
-    text-shadow: none; /* Elimina cualquier sombra de texto */
 }
 
 /* Botón de precio */
-.price-button {
-    background-color: #20c997;  /* Color verde agua */
+.price-btn {
+    background-color: #20c997;
+    /* Color verde agua */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -77,6 +42,7 @@
     margin-top: 10px;
 }
 
-.price-button:hover {
-    background-color: #17a085;  /* Cambio de color en hover */
+.price-btn:hover {
+    background-color: #17a085;
+    /* Cambio de color en hover */
 }

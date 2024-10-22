@@ -1,0 +1,70 @@
+.contenedor-principal {
+    margin: 10px auto;
+    padding: 10px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.container {
+    background-color: whitesmoke;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 5px;
+}
+
+.titulo {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.2rem;
+}
+
+.aviso {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.info {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: baseline ;
+    text-decoration: underline;
+}
+
+.inf {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: none;
+    text-decoration: none;
+}
+
+.form-check-label {
+    font-size: 12px;
+    font-weight: bold; 
+    text-decoration: underline;
+}
+
+.inputPago {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-completar {
+    background-color: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-completar:hover {
+    background-color: #333;
+}
