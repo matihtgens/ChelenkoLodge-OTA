@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // I
 import Header from './components/header';  // Importa el componente Header, asegúrate de que la ruta sea correcta.
 import Navbar from './components/navbar';  // Importa el componente Navbar.
 import MiniCart from './components/minicart';  // Importa el componente MiniCart.
-import Footer from './components/Footer';  // Importa el componente Footer.
-import MetodoPago from './components/MetodoPago';
+import Footer from './components/footer';  // Importa el componente Footer.
+import MetodoPago from './components/metodopago';
 import Register from './components/register';
-import Home from './components/Home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
+import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
 import Reservation from './pages/reservation';  // Importa el componente Reservation.
 import Cart from './pages/cartpage';  // Importa el componente Cart.
 import ApiFakeCard from './components/ApiFakeCard';
