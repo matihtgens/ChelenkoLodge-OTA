@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faSpa, faBanSmoking } from '@fortawesome/free-solid-svg-icons'; 
 import suiteImage from "../assets/img/suitecard.jpg";
 import tinyImage from "../assets/img/tinycard.jpg";
-import './ApiFakeCard.css';
+import './apifakecard.css';
 
 const ApiFakeCard = () => {
   const cardsData = [
