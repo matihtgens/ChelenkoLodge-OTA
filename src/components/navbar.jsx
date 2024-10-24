@@ -12,7 +12,7 @@ function Navbar({ toggleCart }) { // Recibe toggleCart como prop
             <navbar>
                 <div className='container-navbar'>
                     <div className="container-fluid">
-                        <div className="container cont">
+                        <div className="cont">
                             <form onSubmit={handleSubmit} className="row formulario">
                                 <div className="col-12 col-lg-5 col-md-6 col-sm-6 my-2">
                                     <label htmlFor="checkin" className="form-label">Entrada:</label>
