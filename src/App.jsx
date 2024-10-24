@@ -5,6 +5,7 @@ import Navbar from './components/navbar';  // Importa el componente Navbar.
 import MiniCart from './components/minicart';  // Importa el componente MiniCart.
 import Footer from './components/footer';  // Importa el componente Footer.
 import MetodoPago from './components/metodopago';
+import InfoReserva from './components/info-reserva';
 import Register from './components/register';
 import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
 import Reservation from './pages/reservation';  // Importa el componente Reservation.
@@ -37,6 +38,7 @@ const App = () => {
                         <Route path="/payment" element={<MetodoPago/>} />
                     </Routes>
                     <MetodoPago/>
+                    <InfoReserva/>
                     <Register />
                     <Footer />  {/* Muestra el pie de página */}
                 </div>
