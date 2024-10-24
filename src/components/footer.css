@@ -35,6 +35,12 @@ h4{
 .sin-estilos{
     text-decoration: none;
     color: inherit;
+    
+}
+
+div ul li a:hover{
+    transition: all 0.3s ease;
+    color: green;
 }
 
 .newsletter{  
