@@ -39,8 +39,7 @@ header {
 .efecto:hover{
     transform: scale(1.1);
     transition: 0.5s;
-    text-shadow: 1px 1px 1px rgba(0, 160, 0, 0.651);
-    color: rgb(0, 160, 0) !important;
+    color: green !important;
     font-weight: 500;  
 }
 
