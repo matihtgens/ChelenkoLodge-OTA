@@ -25,10 +25,10 @@ function Header({ onCartClick }) {  // Componente funcional Header que recibe la
                         </button>
                         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                             <div className="navbar-nav cont-links">
-                                <Link className="nav-link efecto" to="/home">Home</Link>
+                                <Link className="nav-link efecto" to="/home">Inicio</Link>
                                 <Link className="nav-link efecto" to="/register">Registro</Link>
                                 <Link className="nav-link efecto" to="/contact">Contacto</Link>
-                                <Link className="nav-link efecto" to="/galeria">Galeria</Link>
+                                <Link className="nav-link efecto" to="https://www.chelenko.com/nosotros/galleria/" target="_blank">Galeria</Link>
                                 <Link className="nav-icon efecto d-none d-lg-block" to="/profile">
                                     <i className="bi bi-person-circle"></i>
                                 </Link>
