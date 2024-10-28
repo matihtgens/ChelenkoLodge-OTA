@@ -7,6 +7,7 @@ import Footer from './components/footer';  // Importa el componente Footer.
 import MetodoPago from './components/metodopago';
 import InfoReserva from './components/info-reserva';
 import Register from './components/register';
+import Contact from './components/contact';
 import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
 import Reservation from './pages/reservation';  // Importa el componente Reservation.
 import Cart from './pages/cartpage';  // Importa el componente Cart.
@@ -33,7 +34,7 @@ const App = () => {
                     <Routes>  {/* Contenedor que maneja las diferentes rutas de la aplicación */}
                         <Route path="/home" element={<Home />} />  {/* Ruta para la página de inicio que renderiza el componente Home */}
                         <Route path="/register" element={<Register />} />  {/* Ruta para la página de reservas que renderiza el componente Reservation */}
-                        <Route path="/contact" element={<Cart />} />  {/* Ruta para la página del carrito que renderiza el componente Cart */}
+                        <Route path="/contact" element={<Contact />} />  {/* Ruta para la página del carrito que renderiza el componente Cart */}
                         <Route path="/cabin" element={<ApiFakeCard/>} />
                         <Route path="/payment" element={<MetodoPago/>} />
                     </Routes>
