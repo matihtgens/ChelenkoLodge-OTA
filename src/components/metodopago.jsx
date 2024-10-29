@@ -18,7 +18,7 @@ const MetodoPago = () => {
               <p>Al hacer clic en <strong>"Completar su Reserva"</strong>, serás redirigido a una ventana segura de Transbank para completar tu pago.</p>
             </div>
             <div className="col-12 aviso"> {/*Sección de aviso sobre Transbank*/}
-              <p className="custom-label"> {/* Clase personalizada para el estilo */}
+              <p> {/* Clase personalizada para el estilo */}
                 Chelenko Lodge trabaja junto a Transbank para facilitar transacciones seguras y eficientes, permitiendo a sus huéspedes realizar pagos con tarjetas de crédito y débito sin complicaciones. Esta colaboración mejora la experiencia del cliente, asegurando un proceso de pago ágil y confiable en su acogedor entorno natural.
               </p>
             </div>
