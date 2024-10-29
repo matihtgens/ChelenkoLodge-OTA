@@ -11,6 +11,7 @@ import Contact from './components/contact';
 import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
 import Reservation from './pages/reservation';  // Importa el componente Reservation.
 import Cart from './pages/cartpage';  // Importa el componente Cart.
+import TestAxios from './components/probandoAxios';
 import ApiFakeCard from './components/ApiFakeCard';
 import { CartProvider } from './context/CartContext';  // Importa el CartProvider que provee el contexto del carrito.
 import './index.css';  // Importa el archivo de estilos globales.
@@ -54,6 +55,9 @@ const App = () => {
                         <div className='col-12 col-md-7 col-lg-8'>
                             <MetodoPago />
                         </div>
+                    </div>
+                    <div>
+                        <TestAxios />
                     </div>                
                     <Footer />  {/* Muestra el pie de página */}
                 </div>
