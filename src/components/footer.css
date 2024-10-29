@@ -1,17 +1,17 @@
 footer.main-footer {
-    background-color: #C9EFF2; /* Color de fondo rosado */
+    background: linear-gradient(to bottom,#92adcf,#2c3774be); /* Degradado */
     width: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(0, 0, 0); /* Color del texto */
+    color: #232324; /* Color del texto */
 }
 
-.container {
-    background-color: #C9EFF2; /* También rosado para el contenedor */
+.footer-container {
+    background:linear-gradient(to bottom,#92adcf,#2c3774be); /* Degradado para el contenedor */
     max-width: 1200px; /* O el ancho máximo que desees */
     margin: 0 auto; /* Centra el contenedor */
     padding: 0 15px; /* Espaciado lateral */
+    border: none !important;
 }
-
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +52,7 @@ h4 {
 
 div ul li a:hover {
     transition: all 0.3s ease;
-    color: rgb(2, 179, 2); /* Cambia el color al pasar el ratón */
+    color: rgb(2, 5, 179); /* Cambia el color al pasar el ratón */
 }
 
 .newsletter {

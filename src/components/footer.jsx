@@ -19,7 +19,7 @@ function Footer() {
 
     return (
         <footer className="main-footer">
-            <div className="container">
+            <div className="container footer-container">
                 <div className="row">
                     <div className="col-md-3 col-sm-12 newsletter">
                         <img src={logo} className="logo-hotel" alt="Logo de Chelenko Lodge" />
