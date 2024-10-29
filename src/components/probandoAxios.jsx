@@ -14,7 +14,7 @@ function TestAxios() {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('/api/guests'); // URL relativa
+            const response = await axios.get('http://chelenko-data.sa-east-1.elasticbeanstalk.com/api/guests');
             setData(response.data);
             setActiveTab('huespedes');
         } catch (error) {
@@ -28,7 +28,7 @@ function TestAxios() {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('/api/rooms'); // URL relativa
+            const response = await axios.get('http://chelenko-data.sa-east-1.elasticbeanstalk.com/api/rooms');
             setData(response.data);
             setActiveTab('habitaciones');
         } catch (error) {
@@ -42,7 +42,7 @@ function TestAxios() {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('/api/reservations'); // URL relativa
+            const response = await axios.get('http://chelenko-data.sa-east-1.elasticbeanstalk.com/api/reservations');
             setData(response.data);
             setActiveTab('reservas');
         } catch (error) {
@@ -56,7 +56,7 @@ function TestAxios() {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('/api/inventory'); // URL relativa
+            const response = await axios.get('http://chelenko-data.sa-east-1.elasticbeanstalk.com/api/inventory');
             setData(response.data);
             setActiveTab('inventario');
         } catch (error) {
@@ -70,7 +70,7 @@ function TestAxios() {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('/api/rate-modifications'); // URL relativa
+            const response = await axios.get('http://chelenko-data.sa-east-1.elasticbeanstalk.com/api/rate-modifications');
             setData(response.data);
             setActiveTab('modificaciones-tarifa');
         } catch (error) {
