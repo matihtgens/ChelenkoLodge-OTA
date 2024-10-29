@@ -9,6 +9,7 @@
     background-color: whitesmoke;
     border: 1px solid rgb(221, 221, 221);
     padding: 20px 30px !important;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .cont-opciones {
@@ -30,6 +31,11 @@
 
 }
 
+.imgTransbank{
+    width: 90%;
+    height: auto;
+}
+
 .titulo {
     padding: 10px;
     display: flex;
@@ -43,24 +49,24 @@
     font-size: 15px;
     display: flex;
     justify-content: flex-start;
+    color:#333;
 }
 
 .info {
     margin: 20px 0;
     padding: 10px;
-    font-size: 12px;
+    font-size: 18px;
     display: flex;
-    align-items: baseline;
-    text-decoration: underline;
+    justify-content: center;
+    color:#333; 
 }
 
 .inf {
-    margin: 20px 0;
     padding: 10px;
-    font-size: 12px;
+    font-size: 15px;
     display: flex;
-    align-items: none;
-    text-decoration: none;
+    justify-content: center;
+    color:#333;
 }
 
 .form-check-label {
@@ -89,7 +95,6 @@
 }
 
 .custom-label {
-    font-family: 'Merriweather', serif;
-    font-size: 16px;
-    color: #333;
+    font-size: 20px;
+    color:#333;
 }

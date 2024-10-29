@@ -65,7 +65,7 @@ function Footer() {
                         <div className="col-md-2 col-sm-8">
                             <h4>Ayuda</h4>
                             <ul className="list-unstyled">
-                                <li><a className='sin-estilos' href=''>Contáctanos</a></li>
+                                <li><Link className='sin-estilos' href='/contact'>Contáctanos</Link></li>
                                 <li><a className='sin-estilos' href=''>Métodos de pago</a></li>
                                 <li><a className='sin-estilos' href=''>Términos y condiciones</a></li>
                             </ul>
