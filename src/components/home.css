@@ -13,9 +13,10 @@
 }
 
 .home-container {
-  width: 90%; /* Ajusta según lo que necesites */
-  margin: 20px auto; /* Centra el contenedor */
-  padding: 10px; /* Espaciado interno */
-  overflow: hidden; /* Evita el desbordamiento */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }
-
