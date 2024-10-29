@@ -33,7 +33,7 @@ const App = () => {
     return (
         <CartProvider>  {/* Proveedor del contexto del carrito, envuelve toda la aplicación para compartir su estado */}
             <Router>  {/* Envoltorio que habilita la navegación entre rutas en la aplicación */}
-                <div>
+                <div className="contenedorPadre">
                     <Header onCartClick={toggleMiniCart} onContactClick={scrollToContact} />  {/* Pasa la función 'toggleMiniCart' como prop al Header para manejar el evento de clic en el carrito */}
                     <Navbar />  {/* Muestra la barra de navegación */}
                     <MiniCart onClose={() => setIsCartOpen(false)} isOpen={isCartOpen} />  {/* Componente MiniCart que se abre o cierra según el estado 'isCartOpen', y permite cerrarlo con 'onClose' */}
@@ -44,9 +44,17 @@ const App = () => {
                         <Route path="/cabin" element={<ApiFakeCard />} />
                         <Route path="/payment" element={<MetodoPago />} />
                     </Routes>
-                    <MetodoPago />
-                    <InfoReserva />
-                    <Register />
+                    <div className='col-12 row contenedorReserva'>
+                        <div className='col-12'>
+                            <Register />
+                        </div>
+                        <div className='col-12 col-md-5 col-lg-4'>
+                            <InfoReserva />
+                        </div>
+                        <div className='col-12 col-md-7 col-lg-8'>
+                            <MetodoPago />
+                        </div>
+                    </div>                
                     <Footer />  {/* Muestra el pie de página */}
                 </div>
             </Router>
