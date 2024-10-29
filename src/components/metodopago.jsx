@@ -9,8 +9,8 @@ const MetodoPago = () => {
       <div className='contenedor-principal'> {/*Contenedor principal del componente*/}
         <div className='container cont-opciones'>
           <div className="container cont-pago"> {/*Contenedor Bootstrap que maneja el layout*/}
-            <div className='titulo'> {/*Sección del título */}
-              <div>
+            <div className='cont-logoTransbank'> {/*Sección del título */}
+              <div className='contenedor-logo'>
                 <img className='imgTransbank' src={logoTransbank} alt="Transbank Logo" />
               </div>
             </div>
