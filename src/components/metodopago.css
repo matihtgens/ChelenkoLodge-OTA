@@ -11,23 +11,23 @@
     padding: 20px 30px !important;
 }
 
-.cont-opciones{
+.cont-opciones {
     background-color: white;
     padding: 10px !important;
     border-radius: 10px;
 }
 
-.cont-pago{
+.cont-pago {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-.cont-terminos{
+.cont-terminos {
     background-color: lightgrey;
     padding: 10px !important;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    
+
 }
 
 .titulo {
@@ -50,7 +50,7 @@
     padding: 10px;
     font-size: 12px;
     display: flex;
-    align-items: baseline ;
+    align-items: baseline;
     text-decoration: underline;
 }
 
@@ -86,4 +86,10 @@
 
 .btn-completar:hover {
     background-color: #333;
+}
+
+.custom-label {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    color: #333;
 }

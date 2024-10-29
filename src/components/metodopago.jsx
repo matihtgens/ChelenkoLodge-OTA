@@ -9,23 +9,18 @@ const MetodoPago = () => {
         <div className='container cont-opciones'>
           <div className="container cont-pago"> {/*Contenedor Bootstrap que maneja el layout*/}
             <div className='titulo'> {/*Sección del título */}
-              <h2>Opciones de pago</h2> {/*Título de la sección */}
+              <div>
+                <img src="src\assets\img\transbanklogo.png" alt="Transbank Logo" />
+              </div>
             </div>
             <div className="col-12 inputPago"> {/*Columna que ocupa todo el ancho*/}
               <div className="form-check"> {/*Contenedor para el checkbox de pago*/}
-                <input
-                  type="checkbox"  //Tipo de input es un checkbox
-                  className="form-check-input" //Clase de Bootstrap para checkbox
-                  id="transbank" //Identificador del checkbox
-                  style={{ borderRadius: '100%' }} //Estilo en línea para bordes redondeados
-                />
-                <label className="form-check-label" htmlFor="transbank"> {/*Etiqueta asociada al checkbox*/}
-                  Transbank {/*Texto del checkbox*/}
-                </label>
               </div>
             </div>
             <div className="col-12 aviso"> {/*Sección de aviso sobre Transbank*/}
-              <label>Aceptamos tarjetas de crédito y débito a través de Transbank, lo que garantiza transacciones rápidas y protegidas. Tu seguridad es nuestra prioridad, por lo que todos los pagos están encriptados y procesados de manera confidencial.</label>
+              <label className="custom-label"> {/* Clase personalizada para el estilo */}
+                Chelenko Lodge trabaja junto a Transbank para facilitar transacciones seguras y eficientes, permitiendo a sus huéspedes realizar pagos con tarjetas de crédito y débito sin complicaciones. Esta colaboración mejora la experiencia del cliente, asegurando un proceso de pago ágil y confiable en su acogedor entorno natural.
+              </label>
             </div>
             <div className="col-12 info"> {/*Información sobre plazos de pago*/}
               <label>TIENES UN PLAZO DE 30 MINUTOS PARA REALIZAR EL PAGO CON <strong>TRANSFERENCIA BANCARIA O TARJETAS DE DÉBITO O CRÉDITO.</strong></label>
