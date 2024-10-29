@@ -4,12 +4,12 @@
     height: auto;
     background-color: lightgray;
     padding: 20px;
-    margin-bottom: 20px; /* Agregar margen inferior para separar del contenido */
+    margin-bottom: 10px; /* Agregar margen inferior para separar del contenido */
 }
 
 .cont{
-    padding: 10px;
-    border-radius: 10px;
+    padding: 5px;
+    border-radius: 5px;
     background-color: rgb(172, 172, 172);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
