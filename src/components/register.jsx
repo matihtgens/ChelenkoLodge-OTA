@@ -172,7 +172,8 @@ const Register = () => {
                     padding: '20px', 
                     boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.5)', 
                     borderRadius: '10px', 
-                    marginBottom: '20px'
+                    marginBottom: '20px',
+                    backgroundColor: 'lightgray'
                 }}>
                     <form className="row g-3 needs-validation" onSubmit={handleSubmit} noValidate>
                         <div className="col-md-4">
