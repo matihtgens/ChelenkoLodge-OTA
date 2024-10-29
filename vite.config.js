@@ -8,7 +8,7 @@ export default defineConfig({
       '/api': {
         target: 'http://chelenko-data.sa-east-1.elasticbeanstalk.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api'), // Mantiene la estructura de la URL
+        rewrite: (path) => path.replace(/^\/api/, ''), // Eliminar el prefijo /api
       },
     },
   },
