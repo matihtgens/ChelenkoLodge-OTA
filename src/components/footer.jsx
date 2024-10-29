@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './footer.css';
 import logo from '../assets/img/logo-Black.webp';
-import flecha from '../assets/img/circulo-de-flecha.png'
+import flecha from '../assets/img/circulo-de-flecha.png';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -9,93 +9,74 @@ function Footer() {
 
     const suscripcionNews = (e) => {
         e.preventDefault();
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            alert('Por favor, introduce un email válido.');
+            return;
+        }
         alert(`Te has suscrito con: ${email}`);
-        setEmail(''); // Limpiar el campo de correo electrónico
+        setEmail('');
     };
 
     return (
-        <footer>
-            <div className="main-footer">
-                <div className="container">
-                    <div className="row">
-                        {/* Column 1 */}
-                        <div className="col-md-2 col-sm-8 newsletter">
-                            {/* Column logo y news */}
-                            <div>
-                                <img src={logo} className="logo-hotel" alt="logo-hotel" />
-                            </div>
-
-                            <div className="col-12">
-                                <div className="ubicacion-hotel">
-                                    <p>Ubicación del hotel (ciudad, país)</p>
-                                </div>
-                                <div>
-                                    <p>Suscríbete al newsletter</p>
-                                </div>
-                            </div>
-                            {/* Input y label  de newsletter*/}
-                            <div className='col-md-12'>
-                                <div className="form">
-                                    <form onSubmit={suscripcionNews}>
-                                        <input
-                                            type="email"
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                            placeholder="tuemail@ejemplo.com"
-                                            required
-                                        />
-                                        <button type="submit">
-                                            <img src={flecha} className="flecha" alt="suscripcion-mail" />
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        {/* Column 2 */}
-                        <div className="col-md-2 col-sm-8">
-                            <h4>Sobre Nosotros</h4>
-                            <ul className="list-unstyled">
-                                <li><a className='sin-estilos' href='https://www.chelenko.com/nosotros/'>Sobre Chelenko Lodge</a></li>
-                            </ul>
-                        </div>
-
-                        {/* Column 3 */}
-                        <div className="col-md-2 col-sm-8">
-                            <h4>Ayuda</h4>
-                            <ul className="list-unstyled">
-                                <li><Link className='sin-estilos' href='/contact' >Contáctanos</Link></li>
-                                <li><a className='sin-estilos' href=''>Métodos de pago</a></li>
-                                <li><a className='sin-estilos' href=''>Términos y condiciones</a></li>
-                            </ul>
-                        </div>
-
-                        {/* Column 4 */}
-                        <div className="col-md-2 col-sm-8">
-                            <h4>Síguenos</h4>
-                            <ul className="list-unstyled">
-                                <li><a className='sin-estilos' target="_blank" href='https://www.instagram.com/'>Instagram</a></li>
-                                <li><a className='sin-estilos' target="_blank" href='https://es-la.facebook.com'>Facebook</a></li>
-                                <li><a className='sin-estilos' target="_blank" href='https://www.tiktok.com/en/'>Tiktok</a></li>
-                            </ul>
-                        </div>
-
-                        {/* Column 5: Galería */}
-                        <div className="col-md-2 col-sm-8">
-                            <h4>Galería</h4>
-                            <ul className="list-unstyled">
-                                <li><a className='sin-estilos' target="_blank" href='https://www.chelenko.com/nosotros/galleria/'>Fotos de nuestros espacios</a></li>
-                            </ul>
-                        </div>
-
-                        {/* Footer bottom Derechos*/}
-                        <div className="col-md-12 footer-botton">
-                            <p className="">
-                                &copy; {new Date().getFullYear()} Chelenko Lodge - All Rights Reserved.
-                            </p>
-                        </div>
+        <footer className="main-footer">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-3 col-sm-12 newsletter">
+                        <img src={logo} className="logo-hotel" alt="Logo de Chelenko Lodge" />
+                        <p className="ubicacion-hotel"></p>
+                        <p>Suscríbete al newsletter</p>
+                        <form onSubmit={suscripcionNews} className="form d-flex align-items-center">
+                            <input
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="tuemail@ejemplo.com"
+                                required
+                                className="form-control me-2"
+                                aria-label="Email para suscripción"
+                            />
+                            <button type="submit" aria-label="Suscribirse al newsletter" className="btn">
+                                <img src={flecha} className="flecha" alt="Enviar suscripción" />
+                            </button>
+                        </form>
                     </div>
+
+                    <div className="col-md-2 col-sm-4">
+                        <h4>Acerca de</h4>
+                        <ul className="list-unstyled">
+                            <li><a className='sin-estilos' href='https://www.chelenko.com/nosotros/' target="_blank" rel="noopener noreferrer">Chelenko Lodge</a></li>
+                            <li><a className='sin-estilos' href='https://www.chelenko.com/nosotros/galleria/' target="_blank" rel="noopener noreferrer">Galería</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="col-md-2 col-sm-4">
+                        <h4>Ayuda</h4>
+                        <ul className="list-unstyled">
+                            <li><Link to="/contact" className="sin-estilos">Contáctanos</Link></li>
+                            <li><Link to="/metodos-pago" className="sin-estilos">Métodos de pago</Link></li>
+                            <li><Link to="/terminos" className="sin-estilos">Términos y condiciones</Link></li>
+                        </ul>
+                    </div>
+
+                    <div className="col-md-2 col-sm-4">
+                        <h4>Síguenos</h4>
+                        <ul className="list-unstyled">
+                            <li><a className='sin-estilos' href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            <li><a className='sin-estilos' href='https://es-la.facebook.com' target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                            <li><a className='sin-estilos' href='https://www.tiktok.com/en/' target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="col-md-3 col-sm-12">
+                        <h4>Contacto</h4>
+                        <p><strong>Email:</strong> <br></br>
+                        <a href="mailto:info@chelenko.com" className='sin-estilos'>info@chelenko.com</a></p>
+                        <p><strong>Teléfono:</strong> <br></br>
+                        <a className='sin-estilos' href="tel:56956292538">+56 9 5629 2538</a></p>
+                    </div>
+                </div>
+                <div className="footer-bottom text-center">
+                    <p>&copy; {new Date().getFullYear()} Chelenko Lodge - Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
