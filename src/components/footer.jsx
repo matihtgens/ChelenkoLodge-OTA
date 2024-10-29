@@ -65,7 +65,7 @@ function Footer() {
                         <div className="col-md-2 col-sm-8">
                             <h4>Ayuda</h4>
                             <ul className="list-unstyled">
-                                <li><Link className='sin-estilos' href='/contact'>Contáctanos</Link></li>
+                                <li><Link className='sin-estilos' href='/contact' >Contáctanos</Link></li>
                                 <li><a className='sin-estilos' href=''>Métodos de pago</a></li>
                                 <li><a className='sin-estilos' href=''>Términos y condiciones</a></li>
                             </ul>
@@ -75,9 +75,9 @@ function Footer() {
                         <div className="col-md-2 col-sm-8">
                             <h4>Síguenos</h4>
                             <ul className="list-unstyled">
-                                <li><a className='sin-estilos' href='https://www.instagram.com/'>Instagram</a></li>
-                                <li><a className='sin-estilos' href='https://es-la.facebook.com'>Facebook</a></li>
-                                <li><a className='sin-estilos' href='https://www.tiktok.com/en/'>Tiktok</a></li>
+                                <li><a className='sin-estilos' target="_blank" href='https://www.instagram.com/'>Instagram</a></li>
+                                <li><a className='sin-estilos' target="_blank" href='https://es-la.facebook.com'>Facebook</a></li>
+                                <li><a className='sin-estilos' target="_blank" href='https://www.tiktok.com/en/'>Tiktok</a></li>
                             </ul>
                         </div>
 
@@ -85,7 +85,7 @@ function Footer() {
                         <div className="col-md-2 col-sm-8">
                             <h4>Galería</h4>
                             <ul className="list-unstyled">
-                                <li><a className='sin-estilos' href='https://www.chelenko.com/nosotros/galleria/'>Fotos de nuestros espacios</a></li>
+                                <li><a className='sin-estilos' target="_blank" href='https://www.chelenko.com/nosotros/galleria/'>Fotos de nuestros espacios</a></li>
                             </ul>
                         </div>
 
