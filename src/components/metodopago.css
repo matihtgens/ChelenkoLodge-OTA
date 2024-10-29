@@ -1,0 +1,95 @@
+.contenedor-principal {
+    margin: 10px auto;
+    padding: 10px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.container {
+    background-color: whitesmoke;
+    border: 1px solid rgb(221, 221, 221);
+    padding: 20px 30px !important;
+}
+
+.cont-opciones {
+    background-color: white;
+    padding: 10px !important;
+    border-radius: 10px;
+}
+
+.cont-pago {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.cont-terminos {
+    background-color: lightgrey;
+    padding: 10px !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.titulo {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.aviso {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.info {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: baseline;
+    text-decoration: underline;
+}
+
+.inf {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: none;
+    text-decoration: none;
+}
+
+.form-check-label {
+    font-size: 12px;
+    font-weight: bold; 
+    text-decoration: underline;
+}
+
+.inputPago {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-completar {
+    background-color: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-completar:hover {
+    background-color: #333;
+}
+
+.custom-label {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    color: #333;
+}

@@ -1,17 +1,49 @@
 /* src/components/header.css */
-
-header {
-    background-color: #f8f9fa; /* Fondo claro */
+.container-navbar {
+    width: 100%;
+    height: auto;
+    background-color: lightgray;
+    padding: 20px;
+    margin-bottom: 20px; /* Agregar margen inferior para separar del contenido */
 }
 
-.navbar-nav .nav-link {
-    margin: 0 15px; /* Espaciado entre los enlaces */
+.cont{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(172, 172, 172);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn {
-    margin-left: 10px; /* Espaciado para el botón del carrito */
+.navbar{
+    width: 100%;  
 }
 
-.navbar-brand img {
-    max-width: 100px; /* Ajustar tamaño del logo */
+.formulario {
+    width: 100%;
+    background-color: whitesmoke;
+    border: 0px solid #000000;
+    border-radius: 5px;
+    margin: 0; /* Eliminar margen lateral */
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+
+form{
+    width: 100%;
+}
+
+.buscar{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+input:hover, select:hover{
+    border-color: green;
+}
+
+

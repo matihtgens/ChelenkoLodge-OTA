@@ -1,16 +1,31 @@
 /* src/components/header.css */
 
 header {
-    background-color: white; /* Fondo blanco */
+    background-color: whitesmoke;
 }
 
-.navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+.cont-principal{
+    min-height: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.cont-logo{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.cont-links{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 
 /* Logo como imagen de fondo */
 .navbar-brand {
-    background-image: url('../assets/img/logo-black.webp'); /* Asegúrate de que la ruta sea correcta */
+    background-image: url('../assets/img/logo-Black.webp'); /* Asegúrate de que la ruta sea correcta */
     background-size: contain; /* Ajusta la imagen al contenedor */
     background-repeat: no-repeat; /* Evita que se repita la imagen */
     width: 100px; /* Ancho del contenedor */
@@ -18,10 +33,20 @@ header {
     display: inline-block; /* Permite que se comporte como un bloque para la imagen de fondo */
 }
 
+.efecto{
+    padding: 5px 10px !important;
+}
+
+.efecto:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    color: green !important;
+    font-weight: 500;  
+}
+
 .nav-icon {
-    font-size: 24px; /* Tamaño del icono del perfil */
-    margin-right: 15px; /* Espaciado entre iconos */
-    color: #000; /* Color del icono */
+    font-size: 24px; /* Tamaño del icono del perfil */ /* Espaciado entre iconos */
+    color: rgba(0, 0, 0, 0.9); /* Color del icono */
 }
 
 .btn-cart {
@@ -29,10 +54,10 @@ header {
     border: none; /* Sin borde */
     cursor: pointer; /* Cambiar cursor al pasar por encima */
     font-size: 24px; /* Tamaño del icono del carrito */
-    color: #000; /* Color del icono */
+    color: rgba(0, 0, 0, 0.9); /* Color del icono */
 }
 
 /* Hover effect for icons */
 .nav-icon:hover, .btn-cart:hover {
-    color: #007bff; /* Cambia el color al pasar el mouse */
+    color: rgb(0, 160, 0); /* Cambia el color al pasar el mouse */
 }
