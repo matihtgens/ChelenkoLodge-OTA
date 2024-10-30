@@ -13,6 +13,7 @@ import Reservation from './pages/reservation';  // Importa el componente Reserva
 import Cart from './pages/cartpage';  // Importa el componente Cart.
 import TestAxios from './components/probandoAxios';
 import ApiFakeCard from './components/ApiFakeCard';
+import Terms from './components/terms';
 import { CartProvider } from './context/CartContext';  // Importa el CartProvider que provee el contexto del carrito.
 import './index.css';  // Importa el archivo de estilos globales.
 
@@ -35,7 +36,7 @@ const App = () => {
         <CartProvider>  {/* Proveedor del contexto del carrito, envuelve toda la aplicación para compartir su estado */}
             <Router>  {/* Envoltorio que habilita la navegación entre rutas en la aplicación */}
                 <div className="contenedorPadre">
-                    <Header onCartClick={toggleMiniCart} onContactClick={scrollToContact} />  {/* Pasa la función 'toggleMiniCart' como prop al Header para manejar el evento de clic en el carrito */}
+                  <Header onCartClick={toggleMiniCart} onContactClick={scrollToContact} />  {/* Pasa la función 'toggleMiniCart' como prop al Header para manejar el evento de clic en el carrito */}
                     <Navbar />  {/* Muestra la barra de navegación */}
                     <MiniCart onClose={() => setIsCartOpen(false)} isOpen={isCartOpen} />  {/* Componente MiniCart que se abre o cierra según el estado 'isCartOpen', y permite cerrarlo con 'onClose' */}
                     <Routes>  {/* Contenedor que maneja las diferentes rutas de la aplicación */}
@@ -44,6 +45,8 @@ const App = () => {
                         <Route path="/contact" onClick={scrollToContact} element={<Contact ref={contactRef} />} />  {/* Ruta para la página del carrito que renderiza el componente Cart */}
                         <Route path="/cabin" element={<ApiFakeCard />} />
                         <Route path="/payment" element={<MetodoPago />} />
+                        <Route path="/terms" element={<Terms />} />
+
                     </Routes>
                     <div className='col-12 row contenedorReserva'>
                         <div className='col-12'>
