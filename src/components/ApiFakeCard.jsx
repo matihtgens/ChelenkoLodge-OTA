@@ -33,7 +33,7 @@ const ApiFakeCard = () => {
 
   return (
     <div className="cont-card">
-      <div className="col-12 row justify-content-center"> {/* Centra las tarjetas */}
+      <div className="col-12 row justify-content-center card-contain"> {/* Centra las tarjetas */}
         {cardsData.map((card, index) => (
           <div key={index} className="col-lg-6 col-md-6 col-sm-12"> {/* Responsivo */}
             <div className="card">

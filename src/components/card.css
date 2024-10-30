@@ -1,5 +1,5 @@
 .card-container {
-  width: 300px;  /* Ancho de cada tarjeta */
+  width: 100%;  /* Ancho de cada tarjeta */
   border-radius: 10px;  /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave para dar efecto de elevación */
   background-color: white;  /* Fondo blanco para la tarjeta */
@@ -12,6 +12,13 @@
 
 .card-container:hover {
   transform: translateY(-10px);  /* Mueve la tarjeta hacia arriba 10px cuando se pasa el mouse por encima */
+}
+
+.card-img-top {
+  width: 95% !important;
+  min-height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .card-image {
@@ -44,8 +51,7 @@
 }
 
 .card-content h3 {
-  font-size: 1.25rem;  /* Tamaño del título */
-  margin-bottom: 10px;  /* Espacio debajo del título */
+  font-size: 1.25rem;  margin-bottom: 10px;  /* Espacio debajo del título */
   color: #2c3e50;  /* Color del texto del título */
 }
 
@@ -88,7 +94,8 @@
   font-size: 1rem;  /* Tamaño del texto del botón */
   cursor: pointer;  /* Cambia el cursor a pointer cuando se pasa sobre el botón */
   transition: background-color 0.3s ease;  /* Animación suave cuando el color de fondo cambia */
-}
+}/* Tamaño del título */
+  
 
 .price-btn:hover {
   background-color: #008f8d;  /* Color de fondo más oscuro cuando se pasa el mouse por encima */
