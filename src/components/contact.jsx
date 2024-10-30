@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './contact.css';
 
 function Contact() {
+
+    const contactRef = useRef(null);
+
+    useEffect(() => {
+        // Opcional: Puedes hacer algún ajuste inicial si quieres que el componente esté visible al cargar
+    }, []);
+
     const [formData, setFormData] = useState({
         nombre: '',
         telefono: '',
@@ -24,7 +31,7 @@ function Contact() {
     };
 
     return (
-        <div className="contact-container">
+        <div className="contact-container" ref={contactRef}>
             <div className='contact-body'>
                 <h1>¿Tienes Alguna Pregunta?</h1>
                 <p className="subtitle">Estamos Aquí para Ayudarte. Utiliza el Formulario para Comunicarte con Nosotros.</p>

@@ -1,56 +1,106 @@
-.main-footer{
-    background-color: #afc6d4;
+footer.main-footer {
+    background: linear-gradient(to bottom,#92adcf,#2c3774be); /* Degradado */
     width: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #232324; /* Color del texto */
 }
 
+.footer-container {
+    background:linear-gradient(to bottom,#92adcf,#2c3774be); /* Degradado para el contenedor */
+    max-width: 1200px; /* O el ancho máximo que desees */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 15px; /* Espaciado lateral */
+    border: none !important;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-  
+
 .col-md-3 {
-    flex: 0 0 20%;
-    max-width: 20%;
+    flex: 0 0 25%; /* Ajustado para mejor distribución */
+    max-width: 25%;
     box-sizing: border-box;
 }
 
-.container {
-    width: 100%;
-    max-width: none;
+.col-md-2 {
+    flex: 0 0 20%; /* Ajuste del ancho para las columnas */
+    max-width: 20%;
 }
 
-.logo-hotel{
+.logo-hotel {
     width: 120px;
+    max-width: 100%; /* Asegura que el logo sea responsivo */
 }
 
-.footer-botton{
+.footer-bottom {
     text-align: center;
+    margin-top: 20px;
 }
 
-h4{
+h4 {
     margin: 20px 0;
-    padding: 20px 0;
-    font-weight: bold !important;
-    
-    
+    padding: 10px 0; /* Ajustado para mejor espacio */
+    font-weight: bold; /* Eliminado !important */
 }
-.sin-estilos{
+
+.sin-estilos {
     text-decoration: none;
     color: inherit;
-    
 }
 
-div ul li a:hover{
+div ul li a:hover {
     transition: all 0.3s ease;
-    color: green;
+    color: rgb(2, 5, 179); /* Cambia el color al pasar el ratón */
 }
 
-.newsletter{  
+.newsletter {
     padding: 20px 0;
 }
 
-.flecha{
+.newsletter .form {
+    display: flex; /* Asegúrate de que sea un contenedor flexible */
+    align-items: center; /* Alinea verticalmente el contenido */
+    justify-content: center; /* Centra el contenido en el eje horizontal */
+}
+
+.newsletter input {
+    margin-right: 10px; /* Espacio entre el input y el botón */
+    flex: 1; /* Hace que el input ocupe el espacio disponible */
+    max-width: 300px; /* Limita el ancho máximo del input */
+}
+
+.newsletter button {
+    border: none; /* Elimina bordes por defecto */
+    background: transparent; /* Hace que el botón sea transparente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+.flecha {
     width: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .col-md-3,
+    .col-md-2 {
+        flex: 0 0 100%; /* Las columnas ocupan todo el ancho en pantallas pequeñas */
+        max-width: 100%;
+    }
+
+    .newsletter .form {
+        flex-direction: row; /* Mantén la dirección en fila */
+        justify-content: center; /* Centra en pantallas pequeñas */
+    }
+
+    .newsletter input {
+        margin-bottom: 0; /* Elimina el margen inferior en móviles */
+        width: auto; /* Permite que el input tome el ancho adecuado */
+        max-width: 80%; /* Ajusta el ancho máximo en móviles */
+    }
+
+    .newsletter button {
+        margin-left: 10px; /* Espacio entre el input y el botón */
+    }
 }

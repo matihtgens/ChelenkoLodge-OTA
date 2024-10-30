@@ -4,6 +4,22 @@
   margin: 0 auto; /* Centra el contenido horizontalmente */
 }
 
+.contenedorPadre{
+  width: 100%;
+  height: 100%;
+}
+
+.contenedorReserva{
+  margin: 0 auto !important;
+  padding: 10px;
+  background-color: lightsteelblue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 :root {
   /* Configuración de tipografía y colores globales */
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

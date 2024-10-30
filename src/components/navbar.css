@@ -5,10 +5,12 @@
     background-color: lightgray;
     padding: 20px;
     margin-bottom: 10%; /* Agregar margen inferior para separar del contenido */
+    main
 }
 
 
 .cont{
+
     display: flex;
     align-items: center;
     justify-content: center;
