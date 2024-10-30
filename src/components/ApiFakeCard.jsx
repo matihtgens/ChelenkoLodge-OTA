@@ -1,11 +1,14 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  
-import { faPaw, faSpa, faBanSmoking } from '@fortawesome/free-solid-svg-icons'; 
-import suiteImage from "../assets/img/suitecard.jpg";
-import tinyImage from "../assets/img/tinycard.jpg";
-import './apifakecard.css';
+import React from 'react'; // Importa React
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importa FontAwesomeIcon
+import { faPaw, faSpa, faBanSmoking } from '@fortawesome/free-solid-svg-icons'; // Importa los iconos
+import suiteImage from "../assets/img/suitecard.jpg"; // Importa la imagen de la Suite
+import tinyImage from "../assets/img/tinycard.jpg"; // Importa la imagen de la Tiny Cabin
+import { Carousel } from 'react-bootstrap';
+import './apifakecard.css'; // Importa el CSS de estilo
 
+// Componente funcional ApiFakeCard
 const ApiFakeCard = () => {
+  // Datos de las tarjetas
   const cardsData = [
     {
       title: 'Suite',
@@ -31,33 +34,38 @@ const ApiFakeCard = () => {
     }
   ];
 
+  // Renderiza el componente
   return (
-    <div className="cont-card">
-      <div className="col-12 row justify-content-center card-contain"> {/* Centra las tarjetas */}
-        {cardsData.map((card, index) => (
-          <div key={index} className="col-lg-6 col-md-6 col-sm-12"> {/* Responsivo */}
-            <div className="card">
-              <img src={card.img} alt={card.title} className="card-img-top" />
-              <div className="card-body">
-                <h3 className="card-title">{card.title}</h3>
-                <p className="card-text">{card.description}</p>
-                <p>Price: {card.price}</p>
-                <div className="conditions">
-                  {card.conditions.map((condition, idx) => (
-                    <div key={idx} className="condition-item">
-                      <FontAwesomeIcon icon={condition.icon} className="condition-icon" />
-                      <span>{condition.text}</span>
-                    </div>
-                  ))}
+    <div className="cont-card"> {/* Contenedor principal */}
+      <Carousel> {/* Componente de carrusel de Bootstrap */}
+        {cardsData.map((card, index) => ( // Mapea cada tarjeta
+          <Carousel.Item key={index}> {/* Cada elemento del carrusel */}
+            <div className="d-flex justify-content-center"> {/* Centra el contenido */}
+              <div className="card"> {/* Tarjeta */}
+                <img src={card.img} alt={card.title} className="card-img-top" /> {/* Imagen de la tarjeta */}
+                <div className="card-body"> {/* Cuerpo de la tarjeta */}
+                  <h3 className="card-title">{card.title}</h3> {/* Título de la tarjeta */}
+                  <p className="card-text">{card.description}</p> {/* Descripción */}
+                  <p>Price: {card.price}</p> {/* Precio */}
+                  <div className="conditions"> {/* Contenedor de condiciones */}
+                    {card.conditions.map((condition, idx) => ( // Mapea condiciones
+                      <div key={idx} className="condition-item"> {/* Cada condición */}
+                        <FontAwesomeIcon icon={condition.icon} className="condition-icon" /> {/* Icono */}
+                        <span>{condition.text}</span> {/* Texto de condición */}
+                      </div>
+                    ))}
+                  </div>
+                  <button className="btn btn-primary price-btn">Añadir al carrito</button> {/* Botón */}
                 </div>
-                <button className="btn btn-primary price-btn">Reservar por {card.price}</button>
               </div>
             </div>
-          </div>
+          </Carousel.Item>
         ))}
-      </div>
+      </Carousel>
     </div>
   );
 };
 
-export default ApiFakeCard;
+
+
+export default ApiFakeCard; // Exporta el componente

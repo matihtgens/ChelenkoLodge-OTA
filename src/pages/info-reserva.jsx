@@ -4,8 +4,8 @@ import './info-reserva.css';
 const InfoReserva = () => {
   return (
     <div className="container container-info-pago my-4">
-      <div className="card mx-auto" style={{maxWidth: '600px'}}>
-        <div className="card-header bg-secondary text-white">
+      <div className="card mx-auto">
+        <div className="card-header">
           <h5 className="card-title mb-0">Su Reserva</h5>
         </div>
         <div className="card-body">

@@ -4,15 +4,14 @@ import Header from './components/header';  // Importa el componente Header, aseg
 import Navbar from './components/navbar';  // Importa el componente Navbar.
 import MiniCart from './components/minicart';  // Importa el componente MiniCart.
 import Footer from './components/footer';  // Importa el componente Footer.
-import MetodoPago from './components/metodopago';
-import InfoReserva from './components/info-reserva';
+import MetodoPago from './pages/metodopago';
+import InfoReserva from './pages/info-reserva';
 import Register from './components/register';
 import Contact from './components/contact';
 import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
-import Reservation from './pages/reservation';  // Importa el componente Reservation.
-import Cart from './pages/cartpage';  // Importa el componente Cart.
 import ApiFakeCard from './components/ApiFakeCard';
 import { CartProvider } from './context/CartContext';  // Importa el CartProvider que provee el contexto del carrito.
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';  // Importa el archivo de estilos globales.
 
 const App = () => {
@@ -33,14 +32,12 @@ const App = () => {
                     <MiniCart onClose={() => setIsCartOpen(false)} isOpen={isCartOpen} />  {/* Componente MiniCart que se abre o cierra según el estado 'isCartOpen', y permite cerrarlo con 'onClose' */}
                     <Routes>  {/* Contenedor que maneja las diferentes rutas de la aplicación */}
                         <Route path="/home" element={<Home />} />  {/* Ruta para la página de inicio que renderiza el componente Home */}
+                        <Route path="/cart" element={<MiniCart />} />
                         <Route path="/register" element={<Register />} />  {/* Ruta para la página de reservas que renderiza el componente Reservation */}
                         <Route path="/contact" element={<Contact />} />  {/* Ruta para la página del carrito que renderiza el componente Cart */}
                         <Route path="/cabin" element={<ApiFakeCard/>} />
                         <Route path="/payment" element={<MetodoPago/>} />
-                    </Routes>
-                    <MetodoPago/>
-                    <InfoReserva/>
-                    <Register />
+                    </Routes> {/* se eliminan rutas */}
                     <Footer />  {/* Muestra el pie de página */}
                 </div>
             </Router>

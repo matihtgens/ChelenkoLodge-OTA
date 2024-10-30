@@ -22,12 +22,6 @@ const MetodoPago = () => {
                 Chelenko Lodge trabaja junto a Transbank para facilitar transacciones seguras y eficientes, permitiendo a sus huéspedes realizar pagos con tarjetas de crédito y débito sin complicaciones. Esta colaboración mejora la experiencia del cliente, asegurando un proceso de pago ágil y confiable en su acogedor entorno natural.
               </label>
             </div>
-            <div className="col-12 info"> {/*Información sobre plazos de pago*/}
-              <label>TIENES UN PLAZO DE 30 MINUTOS PARA REALIZAR EL PAGO CON <strong>TRANSFERENCIA BANCARIA O TARJETAS DE DÉBITO O CRÉDITO.</strong></label>
-            </div>
-            <div className="inf"> {/*Información sobre el envío de datos para el pago*/}
-              <label><strong>AL COMPLETAR la reserva enviaremos un correo electrónico con los datos para realizar el pago.</strong></label>
-            </div>
           </div>
           <div className='container cont-terminos'>
             <div className='col-12 inputPago'> {/*Columna para el checkbox de términos y condiciones*/}
@@ -38,7 +32,7 @@ const MetodoPago = () => {
                   id="terms" //Identificador del checkbox
                 />
                 <label className="form-check-label" htmlFor="terms"> {/*Etiqueta asociada al checkbox*/}
-                  Estoy de acuerdo con los términos y condiciones de Chelenko Lodge OTA
+                  Estoy de acuerdo con los términos y condiciones de Chelenko Lodge
                 </label>
               </div>
             </div>

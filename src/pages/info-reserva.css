@@ -1,0 +1,93 @@
+.container-info-pago {
+    /* Estilo general para el contenedor de la información de reserva */
+    margin: 1.5rem auto;
+}
+
+.card {
+    /* Estilo para la tarjeta que contiene la información */
+    max-width: 600px;
+}
+
+.card-header {
+    /* Estilo para el encabezado de la tarjeta */
+    background-color: #6c757d; /* Color de fondo secundario */
+    color: white; /* Color del texto */
+}
+
+.card-body {
+    /* Espaciado interno para el cuerpo de la tarjeta */
+    padding: 1.25rem; /* Espaciado interno */
+}
+
+.fw-bold {
+    /* Estilo para texto en negrita */
+    font-weight: bold;
+}
+
+.mb-3 {
+    /* Margen inferior para espaciado */
+    margin-bottom: 1rem;
+}
+
+.border-top {
+    /* Estilo para la línea superior */
+    border-top: 1px solid #dee2e6;
+}
+
+.pt-3 {
+    /* Espaciado superior */
+    padding-top: 1rem;
+}
+
+.d-flex {
+    /* Flexbox para alinear elementos */
+    display: flex;
+}
+
+.justify-content-between {
+    /* Espaciado entre elementos flexibles */
+    justify-content: space-between;
+}
+
+.mb-2 {
+    /* Margen inferior */
+    margin-bottom: 0.5rem;
+}
+
+.text-break {
+    /* Rompe el texto si es necesario */
+    word-break: break-word;
+}
+
+.ms-2 {
+    /* Margen a la izquierda */
+    margin-left: 0.5rem;
+}
+
+.text-end {
+    /* Alineación del texto a la derecha */
+    text-align: end;
+}
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+    .card {
+        width: 100%; /* Asegúrate de que la tarjeta ocupe todo el ancho en pantallas pequeñas */
+    }
+
+    .card-header {
+        font-size: 1.25rem; /* Ajusta el tamaño de fuente */
+    }
+
+    .card-body {
+        padding: 1rem; /* Menos espaciado en el cuerpo */
+    }
+}
+
+/* Ajustes para pantallas medianas */
+@media (min-width: 577px) and (max-width: 768px) {
+    .card-header {
+        font-size: 1.5rem; /* Aumenta el tamaño de fuente */
+    }
+}
