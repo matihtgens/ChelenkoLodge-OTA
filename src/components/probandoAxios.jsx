@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './responsive.css';
 
 /* ESTE COMPONENTE LO ESTAMOS USANDO PARA PROBAR AXIOS Y EL MANEJO DE DATOS */
 

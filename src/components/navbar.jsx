@@ -1,6 +1,5 @@
 import React from 'react';
 import './navbar.css';
-import './responsive.css';
 
 function Navbar({ toggleCart }) { // Recibe toggleCart como prop
     const handleSubmit = (event) => {

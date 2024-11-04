@@ -1,7 +1,6 @@
 import React from 'react';  // Importa React para utilizar JSX y otras funcionalidades.
 import { Link } from 'react-router-dom';  // Importa el componente Link para la navegación interna.
 import './header.css';  // Importa los estilos específicos para el componente Header.
-import './responsive.css';
 
 function Header({ onCartClick }) {  // Componente funcional Header que recibe la propiedad 'onCartClick'.
     return (
@@ -10,7 +9,7 @@ function Header({ onCartClick }) {  // Componente funcional Header que recibe la
                 <nav className="navbar navbar-expand-lg cont-principal">
                     <div className="container-fluid">
                         <div className='cont-logo col-6'>
-                            <Link className="navbar-brand" to="/">
+                            <Link className="navbar-brand" to="/home">
                             </Link>
                         </div>
                         <button
@@ -26,7 +25,7 @@ function Header({ onCartClick }) {  // Componente funcional Header que recibe la
                         </button>
                         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                             <div className="navbar-nav cont-links">
-                                <Link className="nav-link efecto" to="/">Inicio</Link>
+                                <Link className="nav-link efecto" to="/home">Inicio</Link>
                                 <Link className="nav-link efecto" to="/register">Registro</Link>
                                 <Link className="nav-link efecto" to="/contact">Contacto</Link>
                                 <Link className="nav-link efecto" to="https://www.chelenko.com/nosotros/galleria/" target="_blank">Galeria</Link>

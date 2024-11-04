@@ -39,7 +39,7 @@ header {
 
 .efecto:hover{
     transform: scale(1.1);
-    transition: 0.5s;
+    transition: all 0.5s ease;
     color: green !important;
     font-weight: 500;  
 }

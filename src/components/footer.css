@@ -52,7 +52,7 @@ h4 {
 
 div ul li a:hover {
     transition: all 0.3s ease;
-    color: rgb(2, 5, 179); /* Cambia el color al pasar el ratón */
+    color: green; /* Cambia el color al pasar el ratón */
 }
 
 .newsletter {
@@ -81,3 +81,26 @@ div ul li a:hover {
     width: 20px;
 }
 
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .col-md-3,
+    .col-md-2 {
+        flex: 0 0 100%; /* Las columnas ocupan todo el ancho en pantallas pequeñas */
+        max-width: 100%;
+    }
+
+    .newsletter .form {
+        flex-direction: row; /* Mantén la dirección en fila */
+        justify-content: center; /* Centra en pantallas pequeñas */
+    }
+
+    .newsletter input {
+        margin-bottom: 0; /* Elimina el margen inferior en móviles */
+        width: auto; /* Permite que el input tome el ancho adecuado */
+        max-width: 80%; /* Ajusta el ancho máximo en móviles */
+    }
+
+    .newsletter button {
+        margin-left: 10px; /* Espacio entre el input y el botón */
+    }
+}

@@ -1,16 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './contact.css';
-import './responsive.css';
 
 function Contact() {
+
     const contactRef = useRef(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === '/contact' && contactRef.current) {
+            contactRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [location]);
+
     const [formData, setFormData] = useState({
         nombre: '',
         telefono: '',
         email: '',
         mensaje: ''
     });
-    const [submitted, setSubmitted] = useState(false); // Estado para manejar el envío
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,8 +32,6 @@ function Contact() {
         e.preventDefault();
         console.log('Datos del formulario enviados:', formData);
         // Aquí normalmente enviarías los datos a un servidor
-        setSubmitted(true); // Cambiar el estado a enviado
-        setFormData({ nombre: '', telefono: '', email: '', mensaje: '' }); // Limpiar el formulario
     };
 
     return (
@@ -33,8 +39,6 @@ function Contact() {
             <div className='contact-body'>
                 <h1>¿Tienes Alguna Pregunta?</h1>
                 <p className="subtitle">Estamos Aquí para Ayudarte. Utiliza el Formulario para Comunicarte con Nosotros.</p>
-
-                {submitted && <p style={{ color: '#20c997', textAlign: 'center' }}>¡Mensaje enviado exitosamente!</p>}
 
                 <form onSubmit={handleSubmit} className="contact-form">
                     <div className="form-group">
@@ -81,7 +85,7 @@ function Contact() {
                         ></textarea>
                     </div>
                     <div className='contact-btn'>
-                        <button type="submit" className="submit-btn">CONTACTAR</button>
+                        <button type="submit" className="submit-btn">ENVIAR MENSAJE</button>
                     </div>
                 </form>
             </div>

@@ -1,55 +1,62 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
-const CartContext = createContext();  // Crea un contexto para compartir el estado del carrito en toda la aplicación.
+// Crear el contexto
+const CartContext = createContext();
 
+// Proveedor del contexto
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);  // Estado del carrito, inicializado como un array vacío.
+  const [cart, setCart] = useState([]);
 
-  // Función para agregar un ítem al carrito
-  const addItemToCart = (item) => {
-    setCart((prevCart) => {  // Actualiza el estado del carrito
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);  // Busca si el ítem ya existe en el carrito
+  // Función para actualizar la cantidad de un item en el carrito
+  const updateQuantity = (id, delta) => {
+    setCart((prevCart) => {
+      return prevCart.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity + delta) } // Evita que la cantidad sea menor que 1
+          : item
+      );
+    });
+  };
+
+  // Función para calcular el total
+  const getTotal = () => {
+    return cart.reduce((total, item) => {
+      return total + item.price * item.quantity; // Asegúrate de que cada item tenga un precio
+    }, 0);
+  };
+
+  // Función para agregar un item al carrito
+  const addToCart = (item) => {
+    setCart((prevCart) => {
+      // Verifica si el item ya existe en el carrito
+      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
-        // Si el ítem ya está en el carrito, aumenta su cantidad
+        // Si ya existe, actualiza la cantidad
         return prevCart.map((cartItem) =>
           cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }  // Si coincide el ID, incrementa la cantidad
-            : cartItem  // Si no coincide, devuelve el ítem sin cambios
+            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+            : cartItem
         );
       } else {
-        // Si el ítem no existe, agrégalo al carrito con cantidad 1
-        return [...prevCart, { ...item, quantity: 1 }];  // Añade el ítem con una cantidad inicial de 1
+        // Si no existe, agrega el nuevo item
+        return [...prevCart, item];
       }
     });
   };
 
-  // Función para calcular el total del carrito
-  const getTotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);  // Suma el precio multiplicado por la cantidad de cada ítem
+  // Función para eliminar un item del carrito
+  const removeFromCart = (id) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
-  // Función para actualizar la cantidad de un ítem en el carrito
-  const updateItemQuantity = (id, delta) => {
-    setCart((prevCart) =>  // Actualiza el carrito
-      prevCart
-        .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity + delta } : item  // Si el ID coincide, ajusta la cantidad
-        )
-        .filter((item) => item.quantity > 0)  // Filtra para eliminar ítems con cantidad 0
-    );
-  };
-
-  // Función opcional para eliminar un ítem del carrito
-  const removeItemFromCart = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));  // Filtra el carrito para eliminar el ítem con el ID proporcionado
-  };
-
-  // Proporciona el contexto del carrito con sus funciones a los componentes hijos
   return (
-    <CartContext.Provider value={{ cart, addItemToCart, getTotal, updateItemQuantity, removeItemFromCart }}>
+    <CartContext.Provider value={{ cart, updateQuantity, getTotal, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => useContext(CartContext);  // Hook personalizado para acceder al contexto del carrito
+// Hook para usar el contexto
+export const useCart = () => {
+  return useContext(CartContext);
+};

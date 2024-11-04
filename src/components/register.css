@@ -1,0 +1,21 @@
+.form-check, .col-12{ 
+    text-align: center;
+}
+
+.style{
+    border: 2px solid black;
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    border-Radius: 10px;
+    margin-Bottom: 20px;
+    background-color: lightgray;
+    
+}
+
+.col-md-6{
+    margin-bottom: 20px;
+}
+
+.container-fluid{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

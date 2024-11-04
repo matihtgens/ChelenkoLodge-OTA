@@ -1,126 +1,51 @@
-/* Contenedor principal de la tarjeta */
 .cont-card {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
-    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;   
 }
 
-/* Tarjeta */
+.card-contain {
+    width: 90%;
+}
+
 .card {
-    width: 100%; /* Cambiar a 100% para responsividad */
-    max-width: 300px; /* Ancho máximo */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    overflow: hidden;
-    position: relative;
-    margin: 10px;
-}
-
-/* Imagen de la tarjeta */
-.card-img-top {
     width: 100%;
-    height: 180px;
+    height: auto;
+    padding: 10px;
+    margin: 1em 0 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilo de la imagen dentro de la card */
+.card-img-top {
+    width: 100% !important;
+    margin: 10px;
+    min-height: 100%;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-/* Cuerpo de la tarjeta */
-.card-body {
-    padding: 15px;
-    text-align: center;
-}
-
-/* Título de la tarjeta */
-.card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Descripción de la tarjeta */
-.card-text {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 10px 0;
-}
-
-/* Precio */
-.price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #20c997;
-    margin: 10px 0;
-}
-
-/* Contenedor de las condiciones */
-.conditions {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-}
-
-/* Cada condición */
-.condition-item {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 0.8rem;
-    color: #333;
-}
-
-/* Icono de condición */
-.condition-icon {
-    font-size: 1.5rem;
-    color: #333;
+    border-radius: 8px;
 }
 
 /* Botón de precio */
 .price-btn {
-    width: 100%; /* Hacer el botón ocupar todo el ancho de la tarjeta */
-    max-width: 200px; /* Ancho máximo opcional */
-    background-color: #20c997!important;
+    background-color: #20c997;
+    /* Color verde agua */
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 1rem; /* Ajustar tamaño de fuente */
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
     margin-top: 10px;
 }
+
 .price-btn:hover {
-    transform: scale(1.05);
-}
-
-/* Ícono de favoritos */
-.favorite-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: white;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Media queries para responsividad */
-@media (max-width: 576px) {
-    .cont-card {
-        flex-direction: column; /* Apilar tarjetas en pantallas pequeñas */
-    }
-}
-
-@media (min-width: 577px) and (max-width: 768px) {
-    .cont-card {
-        justify-content: space-around; /* Espaciado alrededor en pantallas medianas */
-    }
+    background-color: #17a085;
+    /* Cambio de color en hover */
 }
