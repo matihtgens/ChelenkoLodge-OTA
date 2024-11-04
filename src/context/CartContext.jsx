@@ -1,35 +1,55 @@
-// CartContext.jsx
 import React, { createContext, useContext, useState } from 'react';
 
-const CartContext = createContext();
-
-export const useCart = () => useContext(CartContext);
+const CartContext = createContext();  // Crea un contexto para compartir el estado del carrito en toda la aplicación.
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]);  // Estado del carrito, inicializado como un array vacío.
 
-  // Añadir ítem al carrito
-  const addToCart = (item) => {
-    setCartItems((prevItems) => [...prevItems, item]);
+  // Función para agregar un ítem al carrito
+  const addItemToCart = (item) => {
+    setCart((prevCart) => {  // Actualiza el estado del carrito
+      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);  // Busca si el ítem ya existe en el carrito
+      if (existingItem) {
+        // Si el ítem ya está en el carrito, aumenta su cantidad
+        return prevCart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }  // Si coincide el ID, incrementa la cantidad
+            : cartItem  // Si no coincide, devuelve el ítem sin cambios
+        );
+      } else {
+        // Si el ítem no existe, agrégalo al carrito con cantidad 1
+        return [...prevCart, { ...item, quantity: 1 }];  // Añade el ítem con una cantidad inicial de 1
+      }
+    });
   };
 
-  // Calcular el total del carrito
+  // Función para calcular el total del carrito
   const getTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);  // Suma el precio multiplicado por la cantidad de cada ítem
   };
 
-  // Función para hacer autoscroll a la sección de reservas
-  const scrollToReserva = () => {
-    const reservaSection = document.getElementById('reserva');
-    if (reservaSection) {
-      reservaSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Función para actualizar la cantidad de un ítem en el carrito
+  const updateItemQuantity = (id, delta) => {
+    setCart((prevCart) =>  // Actualiza el carrito
+      prevCart
+        .map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity + delta } : item  // Si el ID coincide, ajusta la cantidad
+        )
+        .filter((item) => item.quantity > 0)  // Filtra para eliminar ítems con cantidad 0
+    );
   };
 
+  // Función opcional para eliminar un ítem del carrito
+  const removeItemFromCart = (id) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));  // Filtra el carrito para eliminar el ítem con el ID proporcionado
+  };
+
+  // Proporciona el contexto del carrito con sus funciones a los componentes hijos
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, getTotal, scrollToReserva }}>
+    <CartContext.Provider value={{ cart, addItemToCart, getTotal, updateItemQuantity, removeItemFromCart }}>
       {children}
     </CartContext.Provider>
   );
 };
 
+export const useCart = () => useContext(CartContext);  // Hook personalizado para acceder al contexto del carrito

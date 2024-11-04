@@ -1,41 +1,55 @@
+/* info-reserva.css */
 .container-info-pago {
     /* Estilo general para el contenedor de la información de reserva */
     margin: 1.5rem auto;
+    max-width: 1200px;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
 }
 
 .card {
     /* Estilo para la tarjeta que contiene la información */
+    width: 100%;
     max-width: 600px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .card-header {
     /* Estilo para el encabezado de la tarjeta */
-    background-color: #6c757d; /* Color de fondo secundario */
-    color: white; /* Color del texto */
+    background-color: #6c757d;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 .card-body {
-    /* Espaciado interno para el cuerpo de la tarjeta */
-    padding: 1.25rem; /* Espaciado interno */
+    /* Estilo para el contenido principal de la tarjeta */
+    padding: 1.25rem;
 }
 
 .fw-bold {
-    /* Estilo para texto en negrita */
+    /* Negrita para los títulos dentro de las tarjetas */
     font-weight: bold;
 }
 
-.mb-3 {
+.mb-3, .mb-2 {
     /* Margen inferior para espaciado */
     margin-bottom: 1rem;
 }
 
 .border-top {
-    /* Estilo para la línea superior */
+    /* Línea superior en la tarjeta de reserva */
     border-top: 1px solid #dee2e6;
 }
 
 .pt-3 {
-    /* Espaciado superior */
+    /* Padding superior */
     padding-top: 1rem;
 }
 
@@ -47,11 +61,6 @@
 .justify-content-between {
     /* Espaciado entre elementos flexibles */
     justify-content: space-between;
-}
-
-.mb-2 {
-    /* Margen inferior */
-    margin-bottom: 0.5rem;
 }
 
 .text-break {
@@ -69,11 +78,11 @@
     text-align: end;
 }
 
-
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 576px) {
-    .card {
-        width: 100%; /* Asegúrate de que la tarjeta ocupe todo el ancho en pantallas pequeñas */
+    .container-info-pago {
+        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+        gap: 1rem;
     }
 
     .card-header {
@@ -85,9 +94,3 @@
     }
 }
 
-/* Ajustes para pantallas medianas */
-@media (min-width: 577px) and (max-width: 768px) {
-    .card-header {
-        font-size: 1.5rem; /* Aumenta el tamaño de fuente */
-    }
-}

@@ -83,7 +83,7 @@
 }
 
 .btn-pay {
-  background-color: #00b894;
+  background-color:#20c997 important!;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -94,5 +94,9 @@
 }
 
 .btn-pay:hover {
-  background-color: #019878;
+  background-color: #20c997 important!;
+}
+
+.btn-checkout:hover {
+    background-color: #20c997;
 }
