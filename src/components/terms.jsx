@@ -1,6 +1,5 @@
 import React from 'react';
 import './terms.css';
-import './responsive.css';
 
 // Definición del componente funcional Terminos
 const Terms = () => {
@@ -14,25 +13,24 @@ const Terms = () => {
         <div className='container cont-terminos'>
           <div className='col-12'> {/* Contenedor para los términos y condiciones */}
             <div className="terminos-texto">
-              <h4>Términos y Condiciones</h4>
-              <p><strong>Fecha de vigencia:</strong> [Fecha]</p>
-              <p>Al usar el sitio web Chelenko, usted acepta estos términos. Si no está de acuerdo, no utilice el sitio.</p>
-              <h5>1. Uso del Sitio</h5>
-              <p>El sitio está destinado a uso personal y no comercial. Debe cumplir con las leyes aplicables.</p>
-              <h5>2. Reservas y Pagos</h5>
-              <p>Las reservas están sujetas a disponibilidad y confirmación. Acepta pagar el precio total y los cargos adicionales según la política del proveedor.</p>
-              <h5>3. Cancelaciones</h5>
-              <p>Las políticas de cancelación varían según el proveedor. Revise los términos antes de reservar.</p>
-              <h5>4. Propiedad Intelectual</h5>
-              <p>Todo el contenido del sitio es propiedad de Chelenko y está protegido por leyes de propiedad intelectual. Su reproducción sin autorización está prohibida.</p>
-              <h5>5. Limitación de Responsabilidad</h5>
-              <p>Chelenko no se hace responsable de daños indirectos o errores en la información del sitio.</p>
-              <h5>6. Modificaciones</h5>
-              <p>Chelenko puede modificar estos términos en cualquier momento. Su uso continuado del sitio implica aceptación de los cambios.</p>
-              <h5>7. Ley Aplicable</h5>
-              <p>Estos términos se rigen por las leyes de [Tu País/Estado]. Cualquier disputa se resolverá en [Tu Ciudad/Estado].</p>
-              <h5>8. Contacto</h5>
-              <p>Para consultas, contáctenos en [correo electrónico] o [teléfono].</p>
+              <h4><strong>Términos y Condiciones</strong></h4>
+              <ul>
+                <li>Si deseas realizar pago con transferencia bancaria: por favor, debes contactarte con nosotros a:  <a href="mailto:info@chelenko.com" className='sin-estilos'>info@chelenko.com</a>.</li>
+                <li>Si eres turista extranjero con menos de 3 meses en Chile (validado vía pasaporte) se elimina el impuesto del 19% (IVA). Para ello debes contactarte con nosotros a :  <a href="mailto:info@chelenko.com" className='sin-estilos'>info@chelenko.com</a>.</li>
+                <li>Si haces el pago de la estadía antes o al momento del check-in a más tardar, se cobrará un depósito por 500 USD, los cuales serán liberados íntegramente de no encontrarse ningún daño, el día del check-out después de revisar el estado de la tinycabin.</li>
+              </ul>
+
+              <h4><strong>Políticas de Cancelación</strong></h4>
+              <ul>
+                <li>Sólo se permiten cancelaciones o cambios de fecha de estadía con un mínimo de 14 días.</li>
+                <li>Si la cancelación o cambio de fecha fueran solicitadas dentro de los 14 días previos a la estadía, se cobrará el 100% del valor de la reserva.</li>
+              </ul>
+
+              <h4><strong>Horarios de Entrada y Salida</strong></h4>
+              <ul>
+                <li>Horario de Entrada: 03:00 PM</li>
+                <li>Horario de Salida: 11:00 AM</li>
+              </ul>
             </div>
           </div>
         </div>
