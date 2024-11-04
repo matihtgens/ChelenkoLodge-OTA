@@ -12,6 +12,7 @@ import Home from './components/home';  // Importa el componente Home, asegúrate
 import TestAxios from './components/probandoAxios';  // Importa el componente para probar Axios.
 import ApiFakeCard from './components/ApiFakeCard';  // Importa el componente que contiene las tarjetas de cabañas.
 import Terms from './components/terms';  // Importa el componente de términos y condiciones.
+import MetPagoInfo from './components/metpagoinfo'; // Importa el componente de la info de los métodos de pago.
 import { CartProvider } from './context/CartContext';  // Importa el CartProvider que provee el contexto del carrito.
 import { ReservaYPagoProvider } from './context/reservaypagocontext';  // Importa el provider para reservas y pagos.
 import './index.css';  // Importa el archivo de estilos globales.
@@ -51,6 +52,7 @@ const App = () => {
                         <Route path="/cabin" element={<ApiFakeCard onOpenMiniCart={openMiniCart} />} /> {/* Ruta para la página de cabañas, pasando la función para abrir el mini cart. */}
                         <Route path="/payment" element={<MetodoPago />} />  {/* Ruta para la página de métodos de pago. */}
                         <Route path="/terms" element={<Terms />} />  {/* Ruta para la página de términos y condiciones. */}
+                        <Route path="/metpagoinfo" element={<MetPagoInfo />} />  {/* Ruta para la página de info de métodos de pago. */}
                     </Routes>
                     <div className='col-12 row contenedorReserva'>
                         <div className='col-12'>

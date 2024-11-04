@@ -53,7 +53,7 @@ function Footer() {
                         <h4>Ayuda</h4>
                         <ul className="list-unstyled">
                             <li><Link to="/contact" className="sin-estilos">Contáctanos</Link></li>
-                            <li><Link to="/metodos-pago" className="sin-estilos">Métodos de pago</Link></li>
+                            <li><Link to="/metpagoinfo" className="sin-estilos">Métodos de pago</Link></li>
                             <li><Link to="/terms" className="sin-estilos">Términos y condiciones</Link></li>
                         </ul>
                     </div>
