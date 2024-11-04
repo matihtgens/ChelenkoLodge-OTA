@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './terms.css';
 
 // Definición del componente funcional Terminos
 const Terms = () => {
+  const termsRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/terms' && termsRef.current) {
+      termsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
+
   return (
-    <div className='contenedor-principal'> {/* Contenedor principal del componente */}
+    <div className='contenedor-principal' ref={termsRef}> {/* Contenedor principal del componente */}
       <div className='container cont-opciones'>
         <div className="container cont-pago"> {/* Contenedor Bootstrap que maneja el layout */}
           <div className='titulo'></div>
