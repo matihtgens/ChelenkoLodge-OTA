@@ -1,62 +1,63 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-// Crear el contexto
+// Crear un contexto para el carrito
 const CartContext = createContext();
 
-// Proveedor del contexto
+// Proveedor del contexto del carrito
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+    // Estado para almacenar los ítems del carrito
+    const [cart, setCart] = useState([]);
+    // Estado para almacenar la información de reserva
+    const [reservationInfo, setReservationInfo] = useState(null);
 
-  // Función para actualizar la cantidad de un item en el carrito
-  const updateQuantity = (id, delta) => {
-    setCart((prevCart) => {
-      return prevCart.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + delta) } // Evita que la cantidad sea menor que 1
-          : item
-      );
-    });
-  };
+    // Función para agregar un ítem al carrito
+    const addItemToCart = (item) => {
+        // Actualizar el carrito, verificando si el ítem ya existe
+        setCart((prevCart) => {
+            const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+            if (existingItem) {
+                // Si el ítem ya existe, incrementar su cantidad
+                return prevCart.map((cartItem) =>
+                    cartItem.id === item.id
+                        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                        : cartItem
+                );
+            } else {
+                // Si es un nuevo ítem, agregarlo al carrito con cantidad 1
+                return [...prevCart, { ...item, quantity: 1 }];
+            }
+        });
+    };
 
-  // Función para calcular el total
-  const getTotal = () => {
-    return cart.reduce((total, item) => {
-      return total + item.price * item.quantity; // Asegúrate de que cada item tenga un precio
-    }, 0);
-  };
+    // Función para obtener el total del carrito
+    const getTotal = () => {
+        return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    };
 
-  // Función para agregar un item al carrito
-  const addToCart = (item) => {
-    setCart((prevCart) => {
-      // Verifica si el item ya existe en el carrito
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
-      if (existingItem) {
-        // Si ya existe, actualiza la cantidad
-        return prevCart.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-            : cartItem
+    // Función para actualizar la cantidad de un ítem en el carrito
+    const updateItemQuantity = (id, delta) => {
+        setCart((prevCart) => 
+            prevCart.map((cartItem) =>
+                cartItem.id === id
+                    ? { ...cartItem, quantity: Math.max(cartItem.quantity + delta, 1) } // Asegura que la cantidad no sea menor a 1
+                    : cartItem
+            )
         );
-      } else {
-        // Si no existe, agrega el nuevo item
-        return [...prevCart, item];
-      }
-    });
-  };
+    };
 
-  // Función para eliminar un item del carrito
-  const removeFromCart = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-  };
+    // Función para guardar la información de reserva
+    const saveReservationInfo = (info) => {
+        console.log("Información de reserva guardada:", info); // Log para verificar la información
+        setReservationInfo(info); // Actualiza el estado con la información de reserva
+    };
 
-  return (
-    <CartContext.Provider value={{ cart, updateQuantity, getTotal, addToCart, removeFromCart }}>
-      {children}
-    </CartContext.Provider>
-  );
+    // Retornar el contexto con todas las funciones y estados
+    return (
+        <CartContext.Provider value={{ cart, addItemToCart, getTotal, updateItemQuantity, reservationInfo, saveReservationInfo }}>
+            {children} {/* Renderizar los componentes hijos que usan este contexto */}
+        </CartContext.Provider>
+    );
 };
 
-// Hook para usar el contexto
-export const useCart = () => {
-  return useContext(CartContext);
-};
+// Hook personalizado para usar el CartContext fácilmente
+export const useCart = () => useContext(CartContext);

@@ -40,7 +40,6 @@
 .cart-item-details {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .cart-item-details h6 {
@@ -52,21 +51,42 @@
 .cart-item-details p {
   font-size: 14px;
   color: #777;
-  margin: 5px 0 0;
+  margin: 5px 0;
 }
 
 .quantity-controls {
   display: flex;
   align-items: center;
+  margin-top: 5px;
+}
+
+.quantity-controls span {
+  font-size: 14px;
+  margin: 0 8px;
 }
 
 .quantity-controls button {
-  background-color: transparent;
-  border: 1px solid #ccc;
-  padding: 5px 8px;
-  margin: 0 5px;
-  border-radius: 4px;
+  background-color: #20c997;
+  color: #fff;
+  border: black;
+  border-radius: 15%;
+  width: 15px;
+  height: 35px;
+  font-size: 1.2em;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.quantity-controls button:hover:not(:disabled) {
+  background-color: #151616;
 }
 
 .cart-footer {
@@ -82,8 +102,8 @@
   margin-bottom: 10px;
 }
 
-.btn-pay {
-  background-color: #00b894;
+.btn-checkout {
+  background-color: #20c997;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -93,6 +113,6 @@
   transition: background-color 0.3s;
 }
 
-.btn-pay:hover {
-  background-color: #019878;
+.btn-checkout:hover {
+  background-color: #15a086;
 }

@@ -104,7 +104,7 @@ button:focus-visible {
 
 /* Centrado del contenido en la página principal */
 .home-container {
-  height: 100vh; /* Ocupa todo el alto de la ventana */
+  height: auto; /* Ocupa todo el alto de la ventana */
   display: flex;
   justify-content: center;
   align-items: center;

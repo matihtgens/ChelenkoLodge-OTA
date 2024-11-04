@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/CartContext'; // Asegúrate de que la función saveContactInfo esté disponible en tu contexto
+import { useNavigate } from 'react-router-dom'; // Para la redirección
 import './register.css';
 import './responsive.css';
 
 const Register = () => {
+    const { saveContactInfo } = useCart(); // Función para guardar la información de contacto
+    const navigate = useNavigate(); // Hook para la navegación
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -13,8 +17,6 @@ const Register = () => {
         agree: false,
     });
 
-    const [guests, setGuests] = useState([]);
-
     const handleInputChange = (e) => {
         const { id, value, type, checked } = e.target;
         setFormData((prevData) => ({
@@ -23,9 +25,14 @@ const Register = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Formulario enviado:', formData);
+    // Maneja el evento del botón "Aceptar"
+    const handleAccept = (e) => {
+        e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+        saveContactInfo(formData); // Guarda la información en el contexto
+        console.log('Formulario enviado:', formData); // Muestra en consola la información enviada
+        navigate('/inforeseerva'); // Redirige a la página de detalles de reserva
+
+        // Limpia el formulario después de enviar
         setFormData({
             firstName: '',
             lastName: '',
@@ -35,17 +42,6 @@ const Register = () => {
             children: '',
             agree: false,
         });
-        setGuests([]);
-    };
-
-    const addGuestForm = () => {
-        if (guests.length < 1) {
-            setGuests([...guests, { id: Date.now() }]);
-        }
-    };
-
-    const removeGuestForm = (guestId) => {
-        setGuests(guests.filter((guest) => guest.id !== guestId));
     };
 
     return (
@@ -53,7 +49,7 @@ const Register = () => {
             <h1 className="h1info">Información de contacto</h1>
 
             <div className="style box-style">
-                <form className="row g-3 needs-validation" onSubmit={handleSubmit} noValidate>
+                <form className="row g-3 needs-validation" onSubmit={handleAccept} noValidate>
                     <div className="col-md-4">
                         <label htmlFor="firstName" className="form-label">Primer nombre</label>
                         <input
@@ -147,39 +143,10 @@ const Register = () => {
                             Aceptar los términos y condiciones
                         </label>
                     </div>
+                    <div className="col-12 text-center">
+                        <button type="submit" className="btn btn-primary">ACEPTAR</button> {/* Botón para aceptar */}
+                    </div>
                 </form>
-            </div>
-
-            {guests.map((guest, index) => (
-                <div key={guest.id} className="box-style guest-form">
-                    <form className="row g-3 needs-validation">
-                        <div className="col-md-4">
-                            <label htmlFor={`guestFirstName-${index}`} className="form-label">Primer nombre</label>
-                            <input type="text" className="form-control" id={`guestFirstName-${index}`} required />
-                        </div>
-                        <div className="col-md-4">
-                            <label htmlFor={`guestLastName-${index}`} className="form-label">Apellido</label>
-                            <input type="text" className="form-control" id={`guestLastName-${index}`} required />
-                        </div>
-                        <div className="col-md-4">
-                            <label htmlFor={`guestUsername-${index}`} className="form-label">Mail</label>
-                            <input type="email" className="form-control" id={`guestUsername-${index}`} required />
-                        </div>
-                        <div className="col-md-6">
-                            <label htmlFor={`guestPhone-${index}`} className="form-label">Teléfono</label>
-                            <input type="text" className="form-control" id={`guestPhone-${index}`} required />
-                        </div>
-                    </form>
-                    <button className="btn btn-danger" onClick={() => removeGuestForm(guest.id)} type="button">
-                        Quitar huésped
-                    </button>
-                </div>
-            ))}
-
-            <div className="col-12 text-center">
-                <button className="btn btn-primary" onClick={addGuestForm} disabled={guests.length >= 1}>
-                    Agregar huésped
-                </button>
             </div>
         </div>
     );
