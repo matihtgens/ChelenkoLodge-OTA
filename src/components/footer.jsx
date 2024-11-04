@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './footer.css';
 import logo from '../assets/img/logo-Black.webp';
 import flecha from '../assets/img/circulo-de-flecha.png';
 import { Link } from 'react-router-dom';
+import './footer.css';
 
 function Footer() {
     const [email, setEmail] = useState('');
