@@ -33,10 +33,10 @@ function Header({ onCartClick }) {  // Componente funcional Header que recibe la
                                     <i className="bi bi-person-circle"></i>
                                 </Link>
                                 <Link className="nav-link efecto d-lg-none" to="/profile">Perfil</Link>
-                                <Link className="nav-icon efecto d-none d-lg-block" to="/cart" onClick={onCartClick}>
+                                <Link className="nav-icon efecto d-none d-lg-block" to="/" onClick={onCartClick}>
                                     <i className="bi bi-bag"></i>
                                 </Link>
-                                <Link className="nav-link efecto d-lg-none" to="/cart" onClick={onCartClick}>Carrito</Link>
+                                <Link className="nav-link efecto d-lg-none" to="/" onClick={onCartClick}>Carrito</Link>
                             </div>
                         </div>
                     </div>
