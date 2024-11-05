@@ -61,7 +61,7 @@ function Footer() {
                     <div className="col-md-2 col-sm-4">
                         <h4>Síguenos</h4>
                         <ul className="list-unstyled">
-                            <li><a className='sin-estilos' href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            <li><a className='sin-estilos' href='https://www.instagram.com/chelenko_lodge_patagonia/' target="_blank" rel="noopener noreferrer">Instagram</a></li>
                             <li><a className='sin-estilos' href='https://es-la.facebook.com' target="_blank" rel="noopener noreferrer">Facebook</a></li>
                             <li><a className='sin-estilos' href='https://www.tiktok.com/en/' target="_blank" rel="noopener noreferrer">TikTok</a></li>
                         </ul>

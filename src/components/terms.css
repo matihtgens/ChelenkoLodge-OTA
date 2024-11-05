@@ -1,27 +1,31 @@
-.contenedor-principal {
+.fondo-terminos {
+    background-image: url('https://www.chelenko.com/wp-content/uploads/2020/11/124342389_371931374122029_1026373609019741684_n-1024x1024.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh; /* Asegura que el fondo ocupe toda la altura de la pantalla */
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-info-terminos {
+    max-width: 800px;
+    width: 90%; /* Ancho adaptable */
     margin: 10px auto;
-    padding: 10px;
-    background-color: lightgray;
+    padding: 20px; /* Más espacio alrededor */
+    background-color: rgba(245, 245, 245, 0.8); /* Color de fondo claro y suave */
     border-radius: 10px;
-    text-align: left; /* Alineación del texto a la izquierda */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.container {
-    background-color: whitesmoke;
-    border: 1px solid rgb(221, 221, 221);
-    padding: 20px 30px;
-}
-
-.cont-opciones {
-    background-color: white;
-    padding: 10px;
+.cont-terminos{
+    width: 100%;
+    padding: 20px !important;
     border-radius: 10px;
-}
-
-.cont-terminos {
-    background-color: lightgrey;
-    padding: 10px;
-    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .titulo {
@@ -29,20 +33,6 @@
     /* Eliminada la alineación centrada */
     font-size: 1.2rem;
     text-align: left;
-}
-
-.aviso, .info, .inf {
-    margin: 20px 0;
-    padding: 10px;
-    font-size: 12px;
-}
-
-.aviso {
-    font-size: 15px;
-}
-
-.info, .inf {
-    text-decoration: underline; /* Subrayar texto en info e inf */
 }
 
 .form-check-label {
@@ -79,7 +69,7 @@
 /* Estilo para la lista de términos */
 .terminos-texto {
     list-style-type: disc; /* Tipo de punto */
-    padding-left: 20px; /* Espacio a la izquierda */
+    padding: 5px;
     margin: 0; /* Elimina margen por defecto */
     text-align: left;
 }

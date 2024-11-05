@@ -1,27 +1,40 @@
 .payment-background {
-    background-image: url('./src/assets/img/metpagoinfofoto.jpeg'); 
-    background-size: cover; 
-    background-position: center; 
-    height: 100vh; 
+    background-image: url('../assets/img/metpagoinfofoto.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh; /* Asegura que el fondo ocupe toda la altura de la pantalla */
+    padding: 40px 0;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-payment{
+    max-width: 700px;
+    width: 100%; /* Ancho adaptable */
+    margin: 10px auto;
+    padding: 15px; /* Más espacio alrededor */
+    background-color: rgba(245, 245, 245, 0.7); /* Color de fondo claro y suave */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .foto-trans {
     max-width: 80%; 
     height: auto;
-    margin: 10px 0; 
+    margin: 30px 0;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.5));
 }
 
 .payment-methods {
     padding: 20px;
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
     text-align: center;
     background-color: rgba(249, 249, 249, 0.8); /* Fondo semitransparente para el contenedor */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .methods-list {

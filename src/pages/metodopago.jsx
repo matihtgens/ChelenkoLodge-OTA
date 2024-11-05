@@ -1,6 +1,6 @@
 import React from 'react';
 import './metodopago.css';
-import logoTransbank from '../assets/img/transbanklogo.png';
+import logoTransbank from '../assets/img/webpaylogo.png';
 import './responsive.css';
 
 //Definición del componente funcional MetodoPago

@@ -9,7 +9,6 @@ import InfoReserva from './pages/info-reserva';  // Importa la página de inform
 import Register from './pages/register';  // Importa la página de registro.
 import Contact from './components/contact';  // Importa el componente Contact.
 import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
-import TestAxios from './components/probandoAxios';  // Importa el componente para probar Axios.
 import Cardcabin from './components/Cardcabin';  // Importa el componente que contiene las tarjetas de cabañas.
 import Terms from './components/terms';  // Importa el componente de términos y condiciones.
 import MetPagoInfo from './components/metpagoinfo'; // Importa el componente de la info de los métodos de pago.
@@ -17,13 +16,7 @@ import { CartProvider } from './context/CartContext';  // Importa el CartProvide
 import { ReservaYPagoProvider } from './context/reservaypagocontext';  // Importa el provider para reservas y pagos.
 import './index.css';  // Importa el archivo de estilos globales.
 
-const App = () => {
-    const contactRef = useRef(null);  // Referencia al componente Contact en la página de contacto.
-    
-    const scrollToContact = () => {
-        contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });  // Función para hacer scroll al componente de contacto.
-    }; 
-    
+const App = () => { 
     const [isCartOpen, setIsCartOpen] = useState(false);  // Estado local que controla si el MiniCart está abierto o cerrado.
 
     // Función para alternar la visibilidad del MiniCart.
@@ -61,10 +54,7 @@ const App = () => {
                         <div className='col-12 col-md-7 col-lg-8'>
                             <MetodoPago />  {/* Componente para los métodos de pago. */}
                         </div>
-                    </div>
-                    <div>
-                        <TestAxios />  {/* Componente para probar Axios. */}
-                    </div>                
+                    </div>                                  
                     <Footer />  {/* Muestra el pie de página. */}
                 </div>
             </Router>
