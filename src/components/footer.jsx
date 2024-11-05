@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './footer.css';
 import logo from '../assets/img/logo-Black.webp';
 import flecha from '../assets/img/circulo-de-flecha.png';
 import { Link } from 'react-router-dom';
+import './footer.css';
 
 function Footer() {
     const [email, setEmail] = useState('');
@@ -53,7 +53,7 @@ function Footer() {
                         <h4>Ayuda</h4>
                         <ul className="list-unstyled">
                             <li><Link to="/contact" className="sin-estilos">Contáctanos</Link></li>
-                            <li><Link to="/metodos-pago" className="sin-estilos">Métodos de pago</Link></li>
+                            <li><Link to="/metpagoinfo" className="sin-estilos">Métodos de pago</Link></li>
                             <li><Link to="/terms" className="sin-estilos">Términos y condiciones</Link></li>
                         </ul>
                     </div>

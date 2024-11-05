@@ -3,64 +3,46 @@
     padding: 10px;
     background-color: lightgray;
     border-radius: 10px;
+    text-align: left; /* Alineación del texto a la izquierda */
 }
 
 .container {
     background-color: whitesmoke;
     border: 1px solid rgb(221, 221, 221);
-    padding: 20px 30px !important;
+    padding: 20px 30px;
 }
 
 .cont-opciones {
     background-color: white;
-    padding: 10px !important;
+    padding: 10px;
     border-radius: 10px;
-}
-
-.cont-pago {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
 }
 
 .cont-terminos {
     background-color: lightgrey;
-    padding: 10px !important;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-
+    padding: 10px;
+    border-radius: 5px; /* Esquinas redondeadas */
 }
 
 .titulo {
     padding: 10px;
-    display: flex;
-    justify-content: center;
+    /* Eliminada la alineación centrada */
     font-size: 1.2rem;
+    text-align: left;
+}
+
+.aviso, .info, .inf {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 12px;
 }
 
 .aviso {
-    margin: 20px 0;
-    padding: 10px;
     font-size: 15px;
-    display: flex;
-    justify-content: flex-start;
 }
 
-.info {
-    margin: 20px 0;
-    padding: 10px;
-    font-size: 12px;
-    display: flex;
-    align-items: baseline;
-    text-decoration: underline;
-}
-
-.inf {
-    margin: 20px 0;
-    padding: 10px;
-    font-size: 12px;
-    display: flex;
-    align-items: none;
-    text-decoration: none;
+.info, .inf {
+    text-decoration: underline; /* Subrayar texto en info e inf */
 }
 
 .form-check-label {
@@ -92,4 +74,16 @@
     font-family: 'Merriweather', serif;
     font-size: 16px;
     color: #333;
+}
+
+/* Estilo para la lista de términos */
+.terminos-texto {
+    list-style-type: disc; /* Tipo de punto */
+    padding-left: 20px; /* Espacio a la izquierda */
+    margin: 0; /* Elimina margen por defecto */
+    text-align: left;
+}
+
+.terminos-texto li {
+    margin-bottom: 10px; /* Espacio entre elementos */
 }

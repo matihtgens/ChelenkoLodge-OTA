@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ApiFakeCard from './ApiFakeCard'; // Importa los datos de cabañas desde ApiFakeCard
 import { useCart } from '../context/CartContext';
 import './minicart.css';
 import './responsive.css';
@@ -37,7 +36,7 @@ const MiniCart = ({ onClose, isOpen }) => {
             <div className="cart-item-details">
               {/* Muestra el nombre y el precio de la cabaña */}
               <h6>{item.name}</h6>
-              <p>Valor por cabaña: ${item.price}</p>
+              <p>Valor de cabaña: ${item.price}</p>
               
               {/* Controles para ajustar el número de noches */}
               <div className="quantity-controls">
@@ -46,9 +45,6 @@ const MiniCart = ({ onClose, isOpen }) => {
                 <span>{item.quantity}</span>
                 <button onClick={() => handleIncrease(item.id)}>+</button>
               </div>
-              
-              {/* Subtotal de la cabaña calculado en base a la cantidad de noches */}
-              <p>Subtotal: ${(item.quantity * item.price).toFixed(2)}</p>
             </div>
           </div>
         ))
@@ -58,12 +54,11 @@ const MiniCart = ({ onClose, isOpen }) => {
 
       {/* Muestra el total general del carrito */}
       <div className="cart-footer">
-        <p>Total: ${formattedTotal}</p>
+        <p>Subtotal: ${formattedTotal}</p>
         <button
           className="btn-checkout"
           onClick={() => navigate('/register')} // Navega a la página de registro para completar
-        >
-          Ir a Completar
+        >Reservar
         </button>
       </div>
     </div>

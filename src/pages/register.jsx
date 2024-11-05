@@ -131,19 +131,6 @@ const Register = () => {
                         </select>
                     </div>
                     <div className="col-12 text-center">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="agree"
-                            checked={formData.agree}
-                            onChange={handleInputChange}
-                            required
-                        />
-                        <label className="form-check-label" htmlFor="agree">
-                            Aceptar los términos y condiciones
-                        </label>
-                    </div>
-                    <div className="col-12 text-center">
                         <button type="submit" className="btn btn-primary">ACEPTAR</button> {/* Botón para aceptar */}
                     </div>
                 </form>
