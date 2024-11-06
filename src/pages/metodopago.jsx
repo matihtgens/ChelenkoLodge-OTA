@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './metodopago.css';
 import logoTransbank from '../assets/img/webpaylogo.png';
 import './responsive.css';
@@ -30,22 +31,22 @@ const MetodoPago = () => {
               <p><strong>Si el pago es rechazado, verifica que tus fondos sean suficientes o contacta a tu banco.</strong></p>
             </div>
           </div>
-          <div className='container cont-terminos'>
+          <div className='cont-terminos-pago'>
             <div className='col-12 inputPago'> {/*Columna para el checkbox de términos y condiciones*/}
               <div className="form-check"> {/*Contenedor para el checkbox de términos*/}
                 <input
                   type="checkbox" //Tipo de input es un checkbox
-                  className="form-check-input" //Clase de Bootstrap para checkbox
+                  className="form-check-input col-2" //Clase de Bootstrap para checkbox
                   id="terms" //Identificador del checkbox
                 />
-                <label className="form-check-label" htmlFor="terms"> {/*Etiqueta asociada al checkbox*/}
-                  Estoy de acuerdo con los términos y condiciones de Chelenko Lodge
+                <label className="form-check-label col-10 terminos-pago" htmlFor="terms"> {/*Etiqueta asociada al checkbox*/}
+                  Estoy de acuerdo con los <Link className='link-terminos' to='/terms' target='_blank'>términos y condiciones</Link> de Chelenko Lodge
                 </label>
               </div>
               
             </div>
-            <div className='col-12'> {/*Contenedor para el botón de completar la reserva*/}
-              <button className="btn-completar">COMPLETAR SU RESERVA</button> {/*Botón para completar la reserva*/}
+            <div className='col-12 cont-boton-pago'> {/*Contenedor para el botón de completar la reserva*/}
+              <button className="btn-completar">IR A PAGAR</button> {/*Botón para completar la reserva*/}
             </div>
           </div>
         </div>

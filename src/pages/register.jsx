@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useCart } from '../context/CartContext'; // Asegúrate de que la función saveContactInfo esté disponible en tu contexto
-import { useNavigate } from 'react-router-dom'; // Para la redirección
+import { useCart } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 import './register.css';
 import './responsive.css';
 
 const Register = () => {
-    const { saveContactInfo } = useCart(); // Función para guardar la información de contacto
-    const navigate = useNavigate(); // Hook para la navegación
+    const { saveContactInfo } = useCart();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -27,115 +27,133 @@ const Register = () => {
 
     // Maneja el evento del botón "Aceptar"
     const handleAccept = (e) => {
-        e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
-        saveContactInfo(formData); // Guarda la información en el contexto
-        console.log('Formulario enviado:', formData); // Muestra en consola la información enviada
-        navigate('/inforeseerva'); // Redirige a la página de detalles de reserva
+        e.preventDefault();
 
-        // Limpia el formulario después de enviar
-        setFormData({
-            firstName: '',
-            lastName: '',
-            username: '',
-            city: '',
-            state: '',
-            children: '',
-            agree: false,
-        });
+        // Verificar si el formulario es válido
+        const form = e.target;
+        if (form.checkValidity()) {
+            saveContactInfo(formData);
+            console.log('Formulario enviado:', formData);
+            navigate('/metodopago'); // Redirige a la página de método de pago
+
+            // Limpia el formulario después de enviar
+            setFormData({
+                firstName: '',
+                lastName: '',
+                username: '',
+                city: '',
+                state: '',
+                children: '',
+                agree: false,
+            });
+        } else {
+            // Añadir clase para mostrar los mensajes de error de validación
+            form.classList.add('was-validated');
+        }
     };
 
     return (
-        <div className="container-fluid">
-            <h1 className="h1info">Información de contacto</h1>
+        <>
+            <div className='cont-background-register'>
+                <div className='cont-register'>
+                    <div className="container-fluid register-body">
+                        <div className='title-register'>
+                            <h1>Información del huesped</h1>
+                        </div>
 
-            <div className="style box-style">
-                <form className="row g-3 needs-validation" onSubmit={handleAccept} noValidate>
-                    <div className="col-md-4">
-                        <label htmlFor="firstName" className="form-label">Primer nombre</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="firstName"
-                            value={formData.firstName}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-4">
-                        <label htmlFor="lastName" className="form-label">Apellido</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="lastName"
-                            value={formData.lastName}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-4">
-                        <label htmlFor="username" className="form-label">Mail</label>
-                        <div className="input-group has-validation">
-                            <span className="input-group-text">@</span>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="username"
-                                value={formData.username}
-                                onChange={handleInputChange}
-                                required
-                            />
+                        <div className="style box-style">
+                            <form className="row g-3 needs-validation" onSubmit={handleAccept}>
+                                <div className="col-md-4">
+                                    <label htmlFor="firstName" className="form-label">Nombre</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="firstName"
+                                        value={formData.firstName}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="col-md-4">
+                                    <label htmlFor="lastName" className="form-label">Apellidos</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="lastName"
+                                        value={formData.lastName}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="col-md-4">
+                                    <label htmlFor="username" className="form-label">Mail</label>
+                                    <div className="input-group has-validation">
+                                        <span className="input-group-text">@</span>
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            id="username"
+                                            value={formData.username}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <label htmlFor="city" className="form-label">Teléfono</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="city"
+                                        value={formData.city}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="col-md-3">
+                                    <label htmlFor="state" className="form-label">País</label>
+                                    <select
+                                        className="form-select"
+                                        id="state"
+                                        value={formData.state}
+                                        onChange={handleInputChange}
+                                        required
+                                    >
+                                        <option disabled value="">Escoger...</option>
+                                        <option value="Chile">Chile</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Alemania">Alemania</option>
+                                        <option value="España">España</option>
+                                        <option value="Estados Unidos">Estados Unidos</option>
+                                        <option value="Francia">Francia</option>
+                                        <option value="Inglaterra">Inglaterra</option>
+                                    </select>
+                                </div>
+                                <div className="col-md-3">
+                                    <label htmlFor="children" className="form-label">Niños</label>
+                                    <select
+                                        className="form-select"
+                                        id="children"
+                                        value={formData.children}
+                                        onChange={handleInputChange}
+                                        required
+                                    >
+                                        <option disabled value="">Niños</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                                <div className="col-12 text-center cont-boton-register">
+                                    <button type="submit" className="btn btn-success">ACEPTAR</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div className="col-md-6">
-                        <label htmlFor="city" className="form-label">Teléfono</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="city"
-                            value={formData.city}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3">
-                        <label htmlFor="state" className="form-label">País</label>
-                        <select
-                            className="form-select"
-                            id="state"
-                            value={formData.state}
-                            onChange={handleInputChange}
-                            required
-                        >
-                            <option disabled value="">Escoger...</option>
-                            <option value="Chile">Chile</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Alemania">Alemania</option>
-                            <option value="España">España</option>
-                            <option value="Estados Unidos">Estados Unidos</option>
-                            <option value="Francia">Francia</option>
-                            <option value="Inglaterra">Inglaterra</option>
-                        </select>
-                    </div>
-                    <div className="col-md-3">
-                        <label htmlFor="children" className="form-label">Niños</label>
-                        <select
-                            className="form-select"
-                            id="children"
-                            value={formData.children}
-                            onChange={handleInputChange}
-                            required
-                        >
-                            <option disabled value="">Niños</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-                    <div className="col-12 text-center">
-                        <button type="submit" className="btn btn-primary">ACEPTAR</button> {/* Botón para aceptar */}
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

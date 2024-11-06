@@ -1,7 +1,43 @@
-.container {
-    font-family: 'Trebuchet MS', sans-serif;
-    margin: 0 auto;
+.cont-background-register{
+    background-image: url('https://www.chelenko.com/wp-content/uploads/2020/11/125398932_1613880912152886_216532921138021799_n.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-register{
     max-width: 1200px;
+    background-color: rgba(211, 211, 211, 0.8);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cont-boton-register{
+    padding-top: 20px;
+}
+
+.title-register{
+    margin: 20px 0;
+    padding: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.register-body{
+    padding: 25px !important;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.box-style{
+    margin: 20px auto;
 }
 
 .row {

@@ -22,12 +22,18 @@
     border-top-right-radius: 5px;
 }
 
-.cont-terminos {
+.cont-terminos-pago {
     background-color: lightgrey;
     padding: 10px !important;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 
+}
+
+.cont-boton-pago{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .imgTransbank {
@@ -91,8 +97,19 @@
 .inputPago {
     margin: 10px;
     padding: 5px;
-    display: flex;
-    justify-content: center;
+}
+
+.terminos-pago{
+    
+    padding: 0 20px;
+}
+
+.link-terminos{
+    color: green;
+}
+
+.link-terminos:hover{
+    color: rgba(0, 128, 0, 0.8);
 }
 
 .btn-completar {

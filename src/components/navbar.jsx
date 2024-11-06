@@ -9,7 +9,7 @@ function Navbar({ toggleCart }) { // Recibe toggleCart como prop
 
     return (
         <>
-            <navbar>
+            <div>
                 <div className='container-navbar'>
                     <div className="container-fluid">
                         <div className="cont">
@@ -29,7 +29,7 @@ function Navbar({ toggleCart }) { // Recibe toggleCart como prop
                         </div>
                     </div>
                 </div>
-            </navbar>
+            </div>
         </>
     );
 }
