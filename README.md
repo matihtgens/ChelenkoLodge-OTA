@@ -1,8 +1,53 @@
-# React + Vite
+# Chelenko-Lodge-OTA
+### Proyecto React + Vite con Bootstrap, Axios y Morgan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Se desarrolla un sitio web manejado como OTA (Online Travel Agency)**
 
-Currently, two official plugins are available:
+Este es un proyecto desarrollado con React y Vite, que utiliza Bootstrap para el diseño de la interfaz y se planea usar Axios para realizar solicitudes HTTP. Además de Morgan para el registro de solicitudes HTTP en el servidor.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requisitos
+
+- [Node.js](https://nodejs.org/) (v16 o superior)
+- [npm](https://www.npmjs.com/) (v7 o superior)
+
+## Instalación
+
+### 1. Clonar el repositorio
+
+Primero, clona este repositorio en tu máquina local:
+
+```bash
+git clone https://github.com/matihtgens/ChelenkoLodge-OTA
+cd ChelenkoLodge-OTA
+npm install
+```
+### 2. Instalar las dependencias con npm install
+
+Esto instalará todas las dependencias definidas en el archivo `package.json`, incluidas:
+
+- **React** y **React DOM**: para la construcción de la interfaz de usuario.
+- **Vite**: como bundler para el proyecto.
+- **Bootstrap**: para el diseño y componentes estilizados.
+- **Axios**: para hacer peticiones HTTP.
+- **Morgan**: para el registro de solicitudes HTTP en el servidor.
+
+Para iniciar el proyecto de manera local, usa el siguiente comando:
+
+- **npm run dev**
+
+---
+
+Desarrollado por el equipo 4 de Generation Chile en su cohorte numero 15, para el bootcamp Fullstack Javascript Jr.
+
+Equipo 4
+
+    Matias Henriquez
+    Jennifer Diaz
+    Hanael Echeverria
+    Alexis Fernandez
+    Byron Espinoza
+  
+    
+
+
+
