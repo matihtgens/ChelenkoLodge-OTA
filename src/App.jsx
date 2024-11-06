@@ -14,9 +14,11 @@ import Terms from './components/terms';  // Importa el componente de términos y
 import MetPagoInfo from './components/metpagoinfo'; // Importa el componente de la info de los métodos de pago.
 import { CartProvider } from './context/CartContext';  // Importa el CartProvider que provee el contexto del carrito.
 import { ReservaYPagoProvider } from './context/reservaypagocontext';  // Importa el provider para reservas y pagos.
+import { ToastContainer } from 'react-toastify'; // Importa el componente ToastContainer para mostrar mensajes de notificación.
+import 'react-toastify/dist/ReactToastify.css'; // Importa los estilos para el componente ToastContainer.
 import './index.css';  // Importa el archivo de estilos globales.
 
-const App = () => { 
+const App = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);  // Estado local que controla si el MiniCart está abierto o cerrado.
 
     // Función para alternar la visibilidad del MiniCart.
@@ -32,32 +34,43 @@ const App = () => {
 
     return (
         <CartProvider>  {/* Proveedor del contexto del carrito, envuelve toda la aplicación para compartir su estado. */}
-        <ReservaYPagoProvider>
-            <Router>  {/* Envoltorio que habilita la navegación entre rutas en la aplicación. */}
-                <div className="contenedorPadre overflow-auto">
-                    <Header onCartClick={toggleMiniCart}/>  {/* Pasa la función 'toggleMiniCart' como prop al Header para manejar el evento de clic en el carrito. */}
-                    <Navbar />  {/* Muestra la barra de navegación. */}
-                    <MiniCart onClose={() => setIsCartOpen(false)} isOpen={isCartOpen} />  {/* Componente MiniCart que se abre o cierra según el estado 'isCartOpen', y permite cerrarlo con 'onClose'. */}
-                    <Routes>  {/* Contenedor que maneja las diferentes rutas de la aplicación. */}
-                        <Route path="/" element={<Home />} />  {/* Ruta para la página de inicio que renderiza el componente Home. */}
-                        <Route path="/register" element={<Register />} />  {/* Ruta para la página de registro. */}
-                        <Route path="/contact" element={<Contact />} />  {/* Ruta para la página de contacto. */}
-                        <Route path="/cabin" element={<Cardcabin onOpenMiniCart={openMiniCart} />} /> {/* Ruta para la página de cabañas, pasando la función para abrir el mini cart. */}
-                        <Route path="/payment" element={<MetodoPago />} />  {/* Ruta para la página de métodos de pago. */}
-                        <Route path="/terms" element={<Terms />} />  {/* Ruta para la página de términos y condiciones. */}
-                        <Route path="/metpagoinfo" element={<MetPagoInfo />} />  {/* Ruta para la página de info de métodos de pago. */}
-                    </Routes>
-                    <div className='col-12 row contenedorReserva'>
-                        <div className='col-12 col-md-5 col-lg-4'>
-                            <InfoReserva />  {/* Componente que muestra la información de reserva. */}
+            <ReservaYPagoProvider>
+                <Router>  {/* Envoltorio que habilita la navegación entre rutas en la aplicación. */}
+                    <div className="contenedorPadre overflow-auto">
+                        <Header onCartClick={toggleMiniCart} />  {/* Pasa la función 'toggleMiniCart' como prop al Header para manejar el evento de clic en el carrito. */}
+                        <Navbar />  {/* Muestra la barra de navegación. */}
+                        <MiniCart onClose={() => setIsCartOpen(false)} isOpen={isCartOpen} />  {/* Componente MiniCart que se abre o cierra según el estado 'isCartOpen', y permite cerrarlo con 'onClose'. */}
+                        <Routes>  {/* Contenedor que maneja las diferentes rutas de la aplicación. */}
+                            <Route path="/" element={<Home />} />  {/* Ruta para la página de inicio que renderiza el componente Home. */}
+                            <Route path="/register" element={<Register />} />  {/* Ruta para la página de registro. */}
+                            <Route path="/contact" element={<Contact />} />  {/* Ruta para la página de contacto. */}
+                            <Route path="/cabin" element={<Cardcabin onOpenMiniCart={openMiniCart} />} /> {/* Ruta para la página de cabañas, pasando la función para abrir el mini cart. */}
+                            <Route path="/payment" element={<MetodoPago />} />  {/* Ruta para la página de métodos de pago. */}
+                            <Route path="/terms" element={<Terms />} />  {/* Ruta para la página de términos y condiciones. */}
+                            <Route path="/metpagoinfo" element={<MetPagoInfo />} />  {/* Ruta para la página de info de métodos de pago. */}
+                        </Routes>
+                        <div className='col-12 row contenedorReserva'>
+                            <div className='col-12 col-md-5 col-lg-4'>
+                                <InfoReserva />  {/* Componente que muestra la información de reserva. */}
+                            </div>
+                            <div className='col-12 col-md-7 col-lg-8'>
+                                <MetodoPago />  {/* Componente para los métodos de pago. */}
+                            </div>
                         </div>
-                        <div className='col-12 col-md-7 col-lg-8'>
-                            <MetodoPago />  {/* Componente para los métodos de pago. */}
-                        </div>
-                    </div>                                  
-                    <Footer />  {/* Muestra el pie de página. */}
-                </div>
-            </Router>
+                        <Footer />  {/* Muestra el pie de página. */}
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="light"
+                        />  {/* Componente ToastContainer para mostrar mensajes de notificación. */}
+                    </div>
+                </Router>
             </ReservaYPagoProvider>
         </CartProvider>
     );

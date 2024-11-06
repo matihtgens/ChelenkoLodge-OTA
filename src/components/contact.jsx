@@ -1,8 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './contact.css';
 
 function Contact() {
+    const notify = () => toast.info('¡Gracias por Contactarnos! Responderemos lo antes posible.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
     const contactRef = useRef(null);
     const location = useLocation();
@@ -32,6 +44,7 @@ function Contact() {
         e.preventDefault();
         console.log('Datos del formulario enviados:', formData);
         // Aquí normalmente enviarías los datos a un servidor
+        notify();
     };
 
     return (
@@ -88,7 +101,7 @@ function Contact() {
                             </div>
                             <div className='contact-btn'>
                                 <button type="submit" className="submit-btn">ENVIAR MENSAJE</button>
-                            </div>
+                            </div>                         
                         </form>
                     </div>
                 </div>

@@ -146,7 +146,7 @@ const Register = () => {
                                     </select>
                                 </div>
                                 <div className="col-12 text-center cont-boton-register">
-                                    <button type="submit" className="btn btn-success">ACEPTAR</button>
+                                    <button type="submit" className="btn btn-success">CONFIRMAR DATOS</button>
                                 </div>
                             </form>
                         </div>

@@ -30,6 +30,7 @@ Esto instalará todas las dependencias definidas en el archivo `package.json`, i
 - **Bootstrap**: para el diseño y componentes estilizados.
 - **Axios**: para hacer peticiones HTTP.
 - **Morgan**: para el registro de solicitudes HTTP en el servidor.
+- **React-Toastify**: para notificaciones como alertas.
 
 ### 3. Iniciar el proyecto en tu entorno local
 
