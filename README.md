@@ -31,10 +31,13 @@ Esto instalará todas las dependencias definidas en el archivo `package.json`, i
 - **Axios**: para hacer peticiones HTTP.
 - **Morgan**: para el registro de solicitudes HTTP en el servidor.
 
+### 3. Iniciar el proyecto en tu entorno local
+
 Para iniciar el proyecto de manera local, usa el siguiente comando:
 
 - **npm run dev**
 
+---
 ---
 
 Desarrollado por el equipo 4 de Generation Chile en su cohorte numero 15, para el bootcamp Fullstack Javascript Jr.
