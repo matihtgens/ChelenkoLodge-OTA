@@ -17,7 +17,7 @@ const Register = () => {
     username: '',
     city: '',
     state: '',
-    children: '',
+    totalh: '',
     agree: false,
   });
 
@@ -64,7 +64,7 @@ const Register = () => {
         username: '',
         city: '',
         state: '',
-        children: '',
+        totalh: '',
         agree: false,
       });
     } else {
@@ -78,7 +78,7 @@ const Register = () => {
       <div className="cont-register">
         <div className="container-fluid register-body">
           <div className="title-register">
-            <h1>Información del huésped</h1>
+            <h1>Información de Reserva</h1>
           </div>
 
           <div className="style box-style">
@@ -162,7 +162,7 @@ const Register = () => {
 
               {/* Campo de número de niños */}
               <div className="col-md-3">
-                <label htmlFor="children" className="form-label">Niños</label>
+                <label htmlFor="children" className="form-label">Total Huespedes</label>
                 <select
                   className="form-select"
                   id="children"
@@ -170,12 +170,13 @@ const Register = () => {
                   onChange={handleInputChange}
                   required
                 >
-                  <option disabled value="">Niños</option>
-                  <option value="0">No aplica</option>
+                  <option disabled value="">Seleccione</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
                 </select>
               </div>
 

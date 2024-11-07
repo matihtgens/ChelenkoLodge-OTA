@@ -115,23 +115,25 @@ const Cardcabin = ({ onOpenMiniCart }) => {
                 </div>
               ))}
             </div>
-
             {/* Botón para agregar la cabaña al carrito */}
-            <div class="button-container">
+            <div className="button-container">
               <button
                 className="btn btn-primary price-btn"
-                onClick={addCabinToCart}
-                notify('Habitación agregada!')
-
-               >
+                onClick={() => {
+                  addCabinToCart();  // Llamar a la función para agregar cabaña al carrito
+                  notify('Habitación agregada!');  // Mostrar notificación
+                }}
+              >
                 Añadir cabaña al Carrito: ${cardsData[currentIndex].price.toLocaleString()}
               </button>
 
               {/* Botón para agregar el servicio adicional (tinaja) al carrito */}
               <button
                 className="btn btn-primary price-btn"
-                onClick={addAdditionalServiceToCart}
-                notify('Servicio adicional agregado!')
+                onClick={() => {
+                  addAdditionalServiceToCart();  // Llamar a la función para agregar servicio adicional al carrito
+                  notify('Servicio adicional agregado!');  // Mostrar notificación
+                }}
               >
                 Añadir Servicio de Tinaja al Carrito: ${cardsData[currentIndex].additionalService.price.toLocaleString()}
               </button>

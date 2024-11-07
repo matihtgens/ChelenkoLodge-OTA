@@ -5,19 +5,20 @@ import Navbar from './components/navbar';  // Importa el componente Navbar.
 import MiniCart from './components/minicart';  // Importa el componente MiniCart.
 import Footer from './components/footer';  // Importa el componente Footer.
 import Payment from './components/payment';
-import MetodoPago from './pages/metodopago';  // Importa la página de métodos de pago.
 import DetalleReserva from './pages/DetalleReserva';  // Importa la página de información de reserva.
 import Register from './pages/register';  // Importa la página de registro.
 import Contact from './components/contact';  // Importa el componente Contact.
 import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
 import Cardcabin from './components/Cardcabin';  // Importa el componente que contiene las tarjetas de cabañas.
 import Terms from './components/terms';  // Importa el componente de términos y condiciones.
+import MetodoPago from './pages/metodopago';
 import MetPagoInfo from './components/metpagoinfo'; // Importa el componente de la info de los métodos de pago.
 import ReservaYPagoProvider from './context/ReservaYPagoProvider'; // Importa el provider para reservas y pagos.
 import { CartProvider, useCart } from './context/CartContext';  // Importa el CartProvider que provee el contexto del carrito.
 import { ToastContainer } from 'react-toastify'; // Importa el componente ToastContainer para mostrar mensajes de notificación.
 import 'react-toastify/dist/ReactToastify.css'; // Importa los estilos para el componente ToastContainer.
 import './index.css';  // Importa el archivo de estilos globales.
+
 
 const App = () => {
     // Aquí puedes usar el hook useCart para acceder al estado y funciones del carrito
@@ -45,10 +46,12 @@ const App = () => {
                             <Route path="/register" element={<Register />} />  {/* Ruta para la página de registro. */}
                             <Route path="/contact" element={<Contact />} />  {/* Ruta para la página de contacto. */}
                             <Route path="/cabin" element={<Cardcabin />} /> {/* Ruta para la página de cabañas, pasando la función para abrir el mini cart. */}
-                            <Route path="/payment" element={<MetodoPago />} />  {/* Ruta para la página de métodos de pago. */}
+                            <Route path="/payment" element={<Payment />} />  {/* Ruta para la página de métodos de pago. */}
                             <Route path="/terms" element={<Terms />} />  {/* Ruta para la página de términos y condiciones. */}
                             <Route path="/metpagoinfo" element={<MetPagoInfo />} />  {/* Ruta para la página de info de métodos de pago. */}
-                        </Routes>                               
+                            <Route path='/DetalleReserva' element={<DetalleReserva />} /> 
+                            <Route path='/metodopago' element={<MetodoPago />} /> 
+                        </Routes>                             
                         <Footer />  {/* Muestra el pie de página. */}
                         <ToastContainer
                             position="top-right"

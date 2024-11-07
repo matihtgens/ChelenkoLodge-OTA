@@ -2,6 +2,7 @@
     padding: 10px;
     background-color: rgba(211, 211, 211, 0.8);
     border-radius: 10px;
+   
 }
 
 .cont-opciones {
@@ -110,11 +111,11 @@
 }
 
 .btn-completar {
-    background-color: black;
+    background-color: #20c997;
     color: white;
-    border: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
 }
 
 .btn-completar:hover {
