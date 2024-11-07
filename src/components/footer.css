@@ -1,15 +1,14 @@
 .main-footer { 
-    background: linear-gradient(to bottom,#92adcf,#2c3774be) !important; /* Degradado */
+    background: linear-gradient(to bottom,#92adcf,#2c3774be) ; /* Degradado */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #232324; /* Color del texto */
+    border-top: 4px solid rgba(176, 196, 222, 0.6);
 }
 
 .footer-container {
-    background:linear-gradient(to bottom,#92adcf,#2c3774be); /* Degradado para el contenedor */
-    max-width: 1200px; /* O el ancho máximo que desees */
+    max-width: 1400px; /* O el ancho máximo que desees */
     margin: 0 auto; /* Centra el contenedor */
-    padding: 0 15px; /* Espaciado lateral */
-    border: none !important;
+    padding: 15px;
 }
 .row {
     display: flex;

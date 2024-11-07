@@ -2,8 +2,11 @@
 .container-navbar {
     width: 100%;
     height: auto;
-    background-color: lightgray;
+    background-color: rgba(119, 136, 153, 0.5);
     padding: 20px;
+    border-top: 3px solid lightsteelblue;
+    border-bottom: 4px solid lightsteelblue;
+    
 }
 
 
@@ -40,6 +43,12 @@ form{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+}
+
+label{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    
 }
 
 input:hover, select:hover{

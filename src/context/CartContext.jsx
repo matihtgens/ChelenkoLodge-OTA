@@ -8,6 +8,11 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [reservationInfo, setReservationInfo] = useState(null);
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [contactInfo, setContactInfo] = useState(null);
+
+    const saveContactInfo = (info) => {
+        setContactInfo(info);
+    };
 
     const addItemToCart = (item) => {
         setCart((prevCart) => {
@@ -45,7 +50,7 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cart, addItemToCart, getTotal, updateItemQuantity, reservationInfo, saveReservationInfo, isCartOpen, setIsCartOpen }}>
+        <CartContext.Provider value={{ cart, addItemToCart, getTotal, updateItemQuantity, reservationInfo, saveReservationInfo, isCartOpen, setIsCartOpen, saveContactInfo }}>
             {children}
         </CartContext.Provider>
     );

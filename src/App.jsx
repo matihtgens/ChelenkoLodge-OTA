@@ -4,8 +4,7 @@ import Header from './components/header';  // Importa el componente Header, aseg
 import Navbar from './components/navbar';  // Importa el componente Navbar.
 import MiniCart from './components/minicart';  // Importa el componente MiniCart.
 import Footer from './components/footer';  // Importa el componente Footer.
-import MetodoPago from './pages/metodopago';  // Importa la página de métodos de pago.
-import InfoReserva from './pages/info-reserva';  // Importa la página de información de reserva.
+import Payment from './components/payment';
 import Register from './pages/register';  // Importa la página de registro.
 import Contact from './components/contact';  // Importa el componente Contact.
 import Home from './components/home';  // Importa el componente Home, asegúrate de que la ruta sea correcta.
@@ -45,18 +44,10 @@ const App = () => {
                             <Route path="/register" element={<Register />} />  {/* Ruta para la página de registro. */}
                             <Route path="/contact" element={<Contact />} />  {/* Ruta para la página de contacto. */}
                             <Route path="/cabin" element={<Cardcabin onOpenMiniCart={openMiniCart} />} /> {/* Ruta para la página de cabañas, pasando la función para abrir el mini cart. */}
-                            <Route path="/payment" element={<MetodoPago />} />  {/* Ruta para la página de métodos de pago. */}
+                            <Route path="/payment" element={<Payment />} />  {/* Ruta para la página de métodos de pago. */}
                             <Route path="/terms" element={<Terms />} />  {/* Ruta para la página de términos y condiciones. */}
                             <Route path="/metpagoinfo" element={<MetPagoInfo />} />  {/* Ruta para la página de info de métodos de pago. */}
-                        </Routes>
-                        <div className='col-12 row contenedorReserva'>
-                            <div className='col-12 col-md-5 col-lg-4'>
-                                <InfoReserva />  {/* Componente que muestra la información de reserva. */}
-                            </div>
-                            <div className='col-12 col-md-7 col-lg-8'>
-                                <MetodoPago />  {/* Componente para los métodos de pago. */}
-                            </div>
-                        </div>
+                        </Routes>                      
                         <Footer />  {/* Muestra el pie de página. */}
                         <ToastContainer
                             position="top-right"

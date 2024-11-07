@@ -2,14 +2,26 @@ import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faSpa, faBanSmoking, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import suiteImage from "../assets/img/tinycard.jpg";
-import tinyImage from "../assets/img/suitecard.jpg";
+import suiteImage from "../assets/img/tinycard.webp";
+import tinyImage from "../assets/img/suitecard.webp";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './apifakecard.css';
 import './responsive.css';
 
 const Cardcabin = () => {
   const { addItemToCart, setIsCartOpen } = useCart();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const notify = (message) => toast.success(message, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
 
   // Datos de las tarjetas
   const cardsData = [
@@ -59,6 +71,7 @@ const Cardcabin = () => {
     };
     addItemToCart(additionalServiceItem);
     setIsCartOpen(true); // Abre el mini cart al añadir un ítem
+    notify('Servicio adicional agregado!')
   };
 
   return (
@@ -76,7 +89,7 @@ const Cardcabin = () => {
             <p className="card-text">{cardsData[currentIndex].description}</p>
             <p className="price">Valor por Noche: ${cardsData[currentIndex].price.toLocaleString()}</p>
             <p className="additional-service">{cardsData[currentIndex].additionalService.name} ${cardsData[currentIndex].additionalService.price.toLocaleString()}</p>
-            
+
             <div className="conditions">
               {cardsData[currentIndex].conditions.map((condition, index) => (
                 <div key={index} className="condition-item">
@@ -92,6 +105,7 @@ const Cardcabin = () => {
               onClick={() => {
                 addItemToCart(cardsData[currentIndex]);
                 setIsCartOpen(true);
+                notify('Habitación agregada!');
               }}
             >
               Agregar al Carrito: ${cardsData[currentIndex].price.toLocaleString()}

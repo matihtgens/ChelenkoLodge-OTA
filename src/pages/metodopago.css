@@ -1,18 +1,12 @@
 .contenedor-principal {
     padding: 10px;
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.8);
     border-radius: 10px;
 }
 
-.container {
-    background-color: whitesmoke;
-    border: 1px solid rgb(221, 221, 221);
-    padding: 20px 30px !important;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
 .cont-opciones {
-    background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgba(245, 245, 245, 0.7);
     padding: 10px !important;
     border-radius: 10px;
 }
@@ -20,6 +14,7 @@
 .cont-pago {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    padding: 40px !important;
 }
 
 .cont-terminos-pago {
@@ -77,6 +72,8 @@
 
 .seguridad {
     font-size: clamp(0.5rem, 1vw + 0.5rem, 1rem);
+    text-align: center;
+    color: #333;
 }
 
 .inf {

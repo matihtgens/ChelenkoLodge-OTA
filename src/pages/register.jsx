@@ -25,18 +25,22 @@ const Register = () => {
         }));
     };
 
-    // Maneja el evento del botón "Aceptar"
     const handleAccept = (e) => {
         e.preventDefault();
 
-        // Verificar si el formulario es válido
-        const form = e.target;
-        if (form.checkValidity()) {
+        const isFormValid =
+            formData.firstName.trim() !== '' &&
+            formData.lastName.trim() !== '' &&
+            formData.username.trim() !== '' &&
+            formData.city.trim() !== '' &&
+            formData.state !== '' &&
+            formData.children !== '';
+
+        if (isFormValid) {
             saveContactInfo(formData);
             console.log('Formulario enviado:', formData);
-            navigate('/metodopago'); // Redirige a la página de método de pago
+            navigate('/payment'); // Redirige a la página de método de pago
 
-            // Limpia el formulario después de enviar
             setFormData({
                 firstName: '',
                 lastName: '',
@@ -47,8 +51,7 @@ const Register = () => {
                 agree: false,
             });
         } else {
-            // Añadir clase para mostrar los mensajes de error de validación
-            form.classList.add('was-validated');
+            alert("Por favor, completa todos los campos antes de continuar.");
         }
     };
 
@@ -58,11 +61,11 @@ const Register = () => {
                 <div className='cont-register'>
                     <div className="container-fluid register-body">
                         <div className='title-register'>
-                            <h1>Información del huesped</h1>
+                            <h1>Información del huésped</h1>
                         </div>
 
                         <div className="style box-style">
-                            <form className="row g-3 needs-validation" onSubmit={handleAccept}>
+                            <form className="row g-3" onSubmit={handleAccept}>
                                 <div className="col-md-4">
                                     <label htmlFor="firstName" className="form-label">Nombre</label>
                                     <input

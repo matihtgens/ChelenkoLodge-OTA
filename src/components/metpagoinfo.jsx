@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import logoTransbank from '../assets/img/webpaylogo.png';
+import logoTransbank from '../assets/img/webpaylogo.webp';
 import './metpagoinfo.css';
 
 const PaymentMethods = () => {

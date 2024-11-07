@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './metodopago.css';
-import logoTransbank from '../assets/img/webpaylogo.png';
+import logoTransbank from '../assets/img/webpaylogo.webp';
 import './responsive.css';
 
 //Definición del componente funcional MetodoPago
@@ -9,7 +9,7 @@ const MetodoPago = () => {
   return (
     <>
       <div className='contenedor-principal'> {/*Contenedor principal del componente*/}
-        <div className='container cont-opciones'>
+        <div className='cont-opciones'>
           <div className="container cont-pago"> {/*Contenedor Bootstrap que maneja el layout*/}
             <div className='cont-logoTransbank'> {/*Sección del título */}
               <div className='contenedor-logo'>

@@ -8,7 +8,7 @@ const InfoReserva = () => {
 
   // Si no hay información de reserva, muestra un mensaje
   if (!reservationInfo) {
-    return <p>No hay información de reserva disponible.</p>;
+    return <p className='no-info'>No hay información de reserva disponible.</p>;
   }
 
   return (

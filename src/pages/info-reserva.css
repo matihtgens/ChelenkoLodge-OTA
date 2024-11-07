@@ -8,6 +8,11 @@
     flex-direction: column;
 }
 
+.no-info{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .card {
     /* Estilo para la tarjeta que contiene la información */
     width: 100%;
