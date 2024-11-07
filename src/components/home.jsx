@@ -15,16 +15,7 @@ const Home = ({ onOpenMiniCart }) => {
             <Cardcabin onOpenMiniCart={onOpenMiniCart} />
           </div>
           
-          {/* DetalleReserva y MetodoPago al lado */}
-          <div className="payment-container">
-            <div className="detalle-reserva">
-              <DetalleReserva />  {/* Componente DetalleReserva */}
-            </div>
-            <div className="metodo-pago">
-              <MetodoPago />  {/* Componente MetodoPago */}
-            </div>
           </div>
-        </div>
       </div>
     </>
   );

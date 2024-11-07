@@ -33,6 +33,11 @@ const ReservaYPagoProvider = ({ children }) => {
       const totalTinaja = cartInfo.reduce((acc, item) => {
         return acc + (typeof item.tinaja === 'number' ? item.tinaja : 0);
       }, 0);
+
+      const total = cartInfo.reduce((acc, item) => {
+        return acc + (item.price * item.quantity || 0);
+      }, 0);
+      
   
       // Crear detalles de pago para cada ítem del carrito
       const detallesPago = cartInfo.map(item => ({
@@ -50,6 +55,7 @@ const ReservaYPagoProvider = ({ children }) => {
         noches: totalNoches,
         tinajadia: totalTinaja, // Total de días de tinaja
         detallesPago,
+        total,
       });
     }
   };
