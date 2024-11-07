@@ -28,6 +28,7 @@
     border-top-right-radius: 12px; 
 }
 
+
 /* Botones de navegación */
 .view-button {
     position: absolute; 
@@ -101,14 +102,19 @@
 }
 
 /* Botón de precio */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .price-btn {
-    width: 100%; 
-    max-width: 220px; 
+    width: auto; 
+    max-width: 50%; 
     background-color: #20c997 !important; 
     color: white; 
     border: none; 
-    padding: 12px; 
-    font-size: 1.1rem; 
+    padding: 12px 30px; 
+    font-size: 16px;
     border-radius: 6px; 
     cursor: pointer; 
     transition: background-color 0.3s ease, transform 0.2s ease; 
@@ -121,6 +127,10 @@
 .price-btn:hover {
     transform: scale(1.05); 
 }
+
+.price-btn:first-child {
+    margin-bottom: 10px;  /* Esto crea un espacio entre los botones */
+  }
 
 /* Media queries para responsividad */
 @media (max-width: 576px) {

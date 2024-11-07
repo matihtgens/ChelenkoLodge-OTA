@@ -102,3 +102,10 @@
     color: #555;
     line-height: 1.6;
 }
+
+
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: #20c997!important;
+    border-color: #20c997;
+}

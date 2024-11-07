@@ -1,101 +1,101 @@
-/* info-reserva.css */
+/* Estilos generales del contenedor principal */
 .container-info-pago {
-    /* Estilo general para el contenedor de la información de reserva */
-    margin: 1.5rem auto;
-    max-width: 1200px;
-    display: flex;
-    gap: 1.5rem;
-    flex-direction: column;
-}
-
-.no-info{
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.card {
-    /* Estilo para la tarjeta que contiene la información */
-    width: 100%;
-    max-width: 600px;
-    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilo para la tarjeta que contiene la información */
+  .card {
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.card-header {
-    /* Estilo para el encabezado de la tarjeta */
-    background-color: #6c757d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para la cabecera de la tarjeta */
+  .card-header {
+    background-color: #20c997;
     color: white;
-    padding: 1rem;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  /* Título dentro de la cabecera */
+  .card-title {
     font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  /* Cuerpo de la tarjeta */
+  .card-body {
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  /* Estilo para los encabezados de secciones */
+  .fw-bold {
     font-weight: bold;
-    text-align: center;
-}
-
-.card-body {
-    /* Estilo para el contenido principal de la tarjeta */
-    padding: 1.25rem;
-}
-
-.fw-bold {
-    /* Negrita para los títulos dentro de las tarjetas */
-    font-weight: bold;
-}
-
-.mb-3, .mb-2 {
-    /* Margen inferior para espaciado */
+    color: #333;
+  }
+  
+  /* Espaciado entre las secciones */
+  .mb-3 {
     margin-bottom: 1rem;
-}
-
-.border-top {
-    /* Línea superior en la tarjeta de reserva */
-    border-top: 1px solid #dee2e6;
-}
-
-.pt-3 {
-    /* Padding superior */
+  }
+  
+  /* Estilo para los textos pequeños */
+  .small {
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  /* Estilo para las filas de fechas */
+  .row {
+    margin-bottom: 1rem;
+  }
+  
+  .col-sm-6 {
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-sm-6 {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  /* Línea divisoria entre la información y los detalles de pago */
+  .border-top {
+    border-top: 2px solid #ddd;
+  }
+  
+  /* Espaciado de la parte superior después de la línea divisoria */
+  .pt-3 {
     padding-top: 1rem;
-}
-
-.d-flex {
-    /* Flexbox para alinear elementos */
+  }
+  
+  /* Estilo para los detalles de pago */
+  .d-flex {
     display: flex;
-}
-
-.justify-content-between {
-    /* Espaciado entre elementos flexibles */
     justify-content: space-between;
-}
-
-.text-break {
-    /* Rompe el texto si es necesario */
-    word-break: break-word;
-}
-
-.ms-2 {
-    /* Margen a la izquierda */
-    margin-left: 0.5rem;
-}
-
-.text-end {
-    /* Alineación del texto a la derecha */
-    text-align: end;
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 576px) {
-    .container-info-pago {
-        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
-        gap: 1rem;
-    }
-
-    .card-header {
-        font-size: 1.25rem; /* Ajusta el tamaño de fuente */
-    }
-
-    .card-body {
-        padding: 1rem; /* Menos espaciado en el cuerpo */
-    }
-}
-
+  }
+  
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilo condicional para los textos en negrita en los detalles de pago */
+  .fw-bold {
+    font-weight: bold;
+  }
+  
+  /* Espaciado en general */
+  .my-4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  

@@ -16,6 +16,7 @@ function Contact() {
         theme: "light",
     });
 
+
     const contactRef = useRef(null);
     const location = useLocation();
 

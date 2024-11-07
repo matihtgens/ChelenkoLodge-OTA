@@ -54,3 +54,4 @@ function Header({ onCartClick }) {
 }
 
 export default Header;
+

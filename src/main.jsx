@@ -2,22 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { CartProvider } from './context/CartContext';
+import ReservaYPagoProvider from './context/ReservaYPagoProvider';  // Importación por defecto
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-// Asegúrate de que el contenedor con id 'app' esté disponible antes de intentar renderizar
 document.addEventListener('DOMContentLoaded', () => {
   const rootElement = document.getElementById('app');
 
-  // Verifica si el contenedor existe
   if (rootElement) {
     const root = ReactDOM.createRoot(rootElement);
     root.render(
       <React.StrictMode>
-        <CartProvider> {/* Envuelve App con CartProvider */}
-          <App />
-        </CartProvider>
+        <ReservaYPagoProvider>  {/* Envuelve el componente principal con ReservaYPagoProvider */}
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ReservaYPagoProvider>
       </React.StrictMode>
     );
   } else {

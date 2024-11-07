@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/CartContext';  // Importar el contexto del carrito
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faSpa, faBanSmoking, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import suiteImage from "../assets/img/tinycard.webp";
@@ -9,9 +9,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import './apifakecard.css';
 import './responsive.css';
 
-const Cardcabin = () => {
-  const { addItemToCart, setIsCartOpen } = useCart();
-  const [currentIndex, setCurrentIndex] = useState(0);
+
+const Cardcabin = ({ onOpenMiniCart }) => {
+  const { addItemToCart } = useCart();  // Obtener funciones del contexto del carrito
+  const [currentIndex, setCurrentIndex] = useState(0);  // Estado para el índice del item actual en el carrusel
   const notify = (message) => toast.success(message, {
     position: "top-right",
     autoClose: 5000,
@@ -23,7 +24,7 @@ const Cardcabin = () => {
     theme: "light",
   });
 
-  // Datos de las tarjetas
+  // Datos de las cabañas y servicios adicionales
   const cardsData = [
     {
       id: 1,
@@ -31,7 +32,7 @@ const Cardcabin = () => {
       price: 73900,
       img: suiteImage,
       description: 'Una suite lujosa con todas las comodidades para una estancia relajante.',
-      additionalService: { name: 'Tinaja suite', price: 60000 },
+      additionalService: { name: 'Tinaja Suite (Valor Diario):', price: 60000 },
       conditions: [
         { icon: faPaw, text: 'Pet Friendly' },
         { icon: faSpa, text: 'Servicios adicionales' },
@@ -44,7 +45,7 @@ const Cardcabin = () => {
       price: 95900,
       img: tinyImage,
       description: 'Una pequeña cabaña acogedora, perfecta para una escapada tranquila.',
-      additionalService: { name: 'Tinaja tiny', price: 45000 },
+      additionalService: { name: 'Tinaja Tiny (Valor Diario):', price: 45000 },
       conditions: [
         { icon: faPaw, text: 'Pet Friendly' },
         { icon: faSpa, text: 'Servicios adicionales' },
@@ -53,34 +54,49 @@ const Cardcabin = () => {
     }
   ];
 
+  // Función para cambiar al siguiente item del carrusel
   const nextCard = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % cardsData.length);
   };
 
+  // Función para cambiar al anterior item del carrusel
   const prevCard = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + cardsData.length) % cardsData.length);
   };
 
-  // Función para agregar el servicio adicional al carrito
+  // Función para agregar solo la cabaña al carrito
+  const addCabinToCart = () => {
+    const cabinItem = {
+      id: cardsData[currentIndex].id,
+      img: cardsData[currentIndex].img,
+      title: cardsData[currentIndex].title,
+      price: cardsData[currentIndex].price,
+      description: cardsData[currentIndex].description
+    };
+    addItemToCart(cabinItem);  // Agregar el item de la cabaña al carrito usando el contexto
+    onOpenMiniCart(true);  // Abrir el mini cart automáticamente
+  };
+
+  // Función para agregar el servicio adicional (tinaja) al carrito
   const addAdditionalServiceToCart = () => {
     const additionalServiceItem = {
-      id: `${cardsData[currentIndex].id}-additional`,
+      id: `${cardsData[currentIndex].id}-additional`,  // ID único para el servicio adicional
       title: cardsData[currentIndex].additionalService.name,
       price: cardsData[currentIndex].additionalService.price,
-      description: `Servicio adicional para ${cardsData[currentIndex].title}`
+      description: `Servicio adicional para ${cardsData[currentIndex].title}`  // Descripción detallada
     };
-    addItemToCart(additionalServiceItem);
-    setIsCartOpen(true); // Abre el mini cart al añadir un ítem
-    notify('Servicio adicional agregado!')
+    addItemToCart(additionalServiceItem);  // Agregar el servicio adicional al carrito
+    onOpenMiniCart(true);  // Abrir el mini cart automáticamente
   };
 
   return (
     <div className="carousel">
-      {/* Botón para la tarjeta anterior */}
+      {/* Botón para ir al ítem anterior en el carrusel */}
       <button className="view-button view-button-left" onClick={prevCard} aria-label="Previous">
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
 
+      {/* Contenedor de la tarjeta actual */}
       <div className="cont-card">
         <div key={cardsData[currentIndex].id} className="card">
           <img src={cardsData[currentIndex].img} alt={cardsData[currentIndex].title} className="card-img-top" />
@@ -90,6 +106,7 @@ const Cardcabin = () => {
             <p className="price">Valor por Noche: ${cardsData[currentIndex].price.toLocaleString()}</p>
             <p className="additional-service">{cardsData[currentIndex].additionalService.name} ${cardsData[currentIndex].additionalService.price.toLocaleString()}</p>
 
+            {/* Mostrar condiciones o características de la cabaña */}
             <div className="conditions">
               {cardsData[currentIndex].conditions.map((condition, index) => (
                 <div key={index} className="condition-item">
@@ -99,30 +116,31 @@ const Cardcabin = () => {
               ))}
             </div>
 
-            {/* Botón para agregar al carrito */}
-            <button
-              className="btn btn-primary price-btn"
-              onClick={() => {
-                addItemToCart(cardsData[currentIndex]);
-                setIsCartOpen(true);
-                notify('Habitación agregada!');
-              }}
-            >
-              Agregar al Carrito: ${cardsData[currentIndex].price.toLocaleString()}
-            </button>
+            {/* Botón para agregar la cabaña al carrito */}
+            <div class="button-container">
+              <button
+                className="btn btn-primary price-btn"
+                onClick={addCabinToCart}
+                notify('Habitación agregada!')
 
-            {/* Botón para agregar servicio adicional */}
-            <button
-              className="btn btn-secondary additional-service-btn"
-              onClick={addAdditionalServiceToCart}
-            >
-              Añadir Servicio Adicional: ${cardsData[currentIndex].additionalService.price.toLocaleString()}
-            </button>
+               >
+                Añadir cabaña al Carrito: ${cardsData[currentIndex].price.toLocaleString()}
+              </button>
+
+              {/* Botón para agregar el servicio adicional (tinaja) al carrito */}
+              <button
+                className="btn btn-primary price-btn"
+                onClick={addAdditionalServiceToCart}
+                notify('Servicio adicional agregado!')
+              >
+                Añadir Servicio de Tinaja al Carrito: ${cardsData[currentIndex].additionalService.price.toLocaleString()}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Botón para la siguiente tarjeta */}
+      {/* Botón para ir al siguiente ítem en el carrusel */}
       <button className="view-button view-button-right" onClick={nextCard} aria-label="Next">
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
